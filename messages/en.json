@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "ai": "AI System",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Steve Donald",
+    "lastName": "Compaore.",
+    "roles": ["Builder", "Product Designer", "AI Engineer", "Entrepreneur"],
+    "stat1Label": "CS Student",
+    "stat1Value": "3rd Year",
+    "stat2Label": "Languages",
+    "stat2Value": "5+",
+    "stat3Label": "AI Tools",
+    "stat3Value": "8+",
+    "cta1": "View Projects",
+    "cta2": "Contact Me",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "sectionNum": "01",
+    "sectionTitle": "About Me",
+    "bio1": "I'm a 3rd-year Computer Science student at Tokat Gaziosmanpaşa University in Turkey, originally from Ouagadougou, Burkina Faso. I build web applications, AI systems, and digital products that solve real problems across Africa.",
+    "bio2": "My mission is to be part of the generation that builds Africa's first world-class tech unicorn — starting from the ground up, brick by brick.",
+    "quote": "I don't just code. I build futures.",
+    "locationLabel": "Location",
+    "locationValue": "Tokat, Turkey",
+    "availLabel": "Availability",
+    "availValue": "Open to Opportunities",
+    "langsLabel": "Languages",
+    "langsValue": "FR · EN · TR · Bambara · Mooré",
+    "emailLabel": "Email",
+    "emailValue": "docompaore2@gmail.com"
+  },
+  "ai": {
+    "sectionNum": "02",
+    "sectionTitle": "AI Agent System",
+    "subtitle": "A local AI infrastructure orchestrating multiple agents via Claude as the central brain.",
+    "hub": "Claude",
+    "hubSub": "Orchestrator",
+    "ollamaLabel": "Ollama Local"
+  },
+  "skills": {
+    "sectionNum": "03",
+    "sectionTitle": "Skills",
+    "techTitle": "Technical",
+    "digitalTitle": "Marketing & Digital",
+    "tech": [
+      { "name": "Next.js", "level": 95 },
+      { "name": "TypeScript", "level": 85 },
+      { "name": "Python", "level": 80 },
+      { "name": "Tailwind CSS", "level": 90 },
+      { "name": "Framer Motion", "level": 85 },
+      { "name": "Supabase", "level": 75 },
+      { "name": "AI / LLM Integration", "level": 88 }
+    ],
+    "digital": [
+      { "name": "Product Design", "level": 80 },
+      { "name": "UI/UX", "level": 85 },
+      { "name": "Brand Strategy", "level": 70 },
+      { "name": "SEO & Analytics", "level": 65 },
+      { "name": "Social Media", "level": 75 }
+    ]
+  },
+  "projects": {
+    "sectionNum": "04",
+    "sectionTitle": "Projects",
+    "subtitle": "Real products. Real impact.",
+    "liveLabel": "Live",
+    "demoBtn": "Demo",
+    "codeBtn": "Code"
+  },
+  "experience": {
+    "sectionNum": "05",
+    "sectionTitle": "Experience",
+    "items": [
+      {
+        "year": "2024–Present",
+        "title": "Founder & Lead Developer",
+        "company": "MIFA Life Shop",
+        "desc": "Building an African lifestyle e-commerce platform with Next.js and Supabase."
+      },
+      {
+        "year": "2024–Present",
+        "title": "Founder & Architect",
+        "company": "Problem to Project Africa",
+        "desc": "Designing an AI-powered platform that transforms African problems into actionable tech projects."
+      },
+      {
+        "year": "2023–Present",
+        "title": "CS Student",
+        "company": "Tokat Gaziosmanpaşa University",
+        "desc": "3rd year Computer Science — specializing in Software Engineering and Cybersecurity."
+      },
+      {
+        "year": "2023",
+        "title": "AI Systems Builder",
+        "company": "African Hybrid Agent",
+        "desc": "Designed a local hybrid AI agent system for African use cases using Ollama and Claude."
+      }
+    ]
+  },
+  "languages": {
+    "sectionNum": "06",
+    "sectionTitle": "Languages",
+    "items": [
+      { "lang": "Français", "level": "Native", "flag": "🇧🇫" },
+      { "lang": "English", "level": "Fluent", "flag": "🇬🇧" },
+      { "lang": "Türkçe", "level": "Conversational", "flag": "🇹🇷" },
+      { "lang": "Bambara", "level": "Native", "flag": "🇲🇱" },
+      { "lang": "Mooré", "level": "Native", "flag": "🇧🇫" }
+    ]
+  },
+  "contact": {
+    "sectionNum": "07",
+    "sectionTitle": "Let's Build",
+    "subtitle": "Something extraordinary.",
+    "formName": "Your Name",
+    "formEmail": "Your Email",
+    "formMessage": "Your Message",
+    "formBtn": "Send Message",
+    "or": "or reach me directly"
+  },
+  "footer": {
+    "built": "Built with Next.js & Framer Motion",
+    "rights": "All rights reserved."
+  }
+}

@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: #070e1f;
+}
+::-webkit-scrollbar-thumb {
+  background: #f0a832;
+  border-radius: 2px;
+}
+
+/* Hide default cursor on desktop — CustomCursor takes over */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* Selection */
+::selection {
+  background: #f0a832;
+  color: #070e1f;
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}

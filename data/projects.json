@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "title": "AURA Pro Phone Showcase",
+    "description": "Premium 3D phone showcase with cinematic scroll animations and glassmorphism UI.",
+    "descFr": "Vitrine téléphone 3D premium avec animations de scroll cinématiques et UI glassmorphism.",
+    "descTr": "Sinematik kaydırma animasyonları ve glassmorphism UI ile premium 3D telefon vitrini.",
+    "stack": ["Next.js", "Framer Motion", "Tailwind v4"],
+    "live": "https://phone-showcase-nu.vercel.app",
+    "github": "https://github.com/dosteeve2-hash/phone-showcase",
+    "featured": true,
+    "color": "#f0a832"
+  },
+  {
+    "id": 2,
+    "title": "MIFA Life Shop",
+    "description": "Full-stack African lifestyle e-commerce platform with auth, product management and Supabase backend.",
+    "descFr": "Plateforme e-commerce full-stack de style de vie africain avec auth, gestion produits et backend Supabase.",
+    "descTr": "Auth, ürün yönetimi ve Supabase backend ile tam kapsamlı Afrika yaşam tarzı e-ticaret platformu.",
+    "stack": ["Next.js", "Supabase", "TypeScript", "Tailwind"],
+    "live": "https://mifa-life-shop-9k55.vercel.app",
+    "github": "https://github.com/dosteeve2-hash/Mifa_Life_shop",
+    "featured": true,
+    "color": "#2dd4ff"
+  },
+  {
+    "id": 3,
+    "title": "Problem to Project Africa",
+    "description": "AI-powered platform that transforms African problems and ideas into actionable tech projects using Claude.",
+    "descFr": "Plateforme IA qui transforme les problèmes africains en projets tech concrets grâce à Claude.",
+    "descTr": "Claude kullanarak Afrika sorunlarını ve fikirlerini uygulanabilir teknoloji projelerine dönüştüren AI platformu.",
+    "stack": ["TypeScript", "Next.js", "Claude API", "Supabase"],
+    "live": "https://problem-to-projects-africa.vercel.app",
+    "github": "https://github.com/dosteeve2-hash/Problem-to-Projects-Africa",
+    "featured": true,
+    "color": "#22d98a"
+  },
+  {
+    "id": 4,
+    "title": "African Hybrid Agent",
+    "description": "Local AI agent system combining Ollama and Claude for African context-aware automation.",
+    "descFr": "Système agent IA local combinant Ollama et Claude pour une automatisation adaptée au contexte africain.",
+    "descTr": "Afrika bağlamına uygun otomasyon için Ollama ve Claude'u birleştiren yerel AI ajan sistemi.",
+    "stack": ["TypeScript", "AI/LLM", "Ollama", "Claude"],
+    "live": "https://burkinacollect.vercel.app",
+    "github": "https://github.com/dosteeve2-hash/african-hybrid-agent",
+    "featured": false,
+    "color": "#f7c060"
+  },
+  {
+    "id": 5,
+    "title": "BurkinaCollect",
+    "description": "Data collection and aggregation platform designed for the Burkinabè digital ecosystem.",
+    "descFr": "Plateforme de collecte et d'agrégation de données conçue pour l'écosystème numérique burkinabè.",
+    "descTr": "Burkinabè dijital ekosistemi için tasarlanmış veri toplama ve birleştirme platformu.",
+    "stack": ["TypeScript", "Next.js"],
+    "github": "https://github.com/dosteeve2-hash/burkinacollect",
+    "featured": false,
+    "color": "#9ba8c4"
+  }
+]

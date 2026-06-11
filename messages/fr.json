@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "about": "À Propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "ai": "Système IA",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "name": "Steve Donald",
+    "lastName": "Compaore.",
+    "roles": ["Builder", "Product Designer", "Ingénieur IA", "Entrepreneur"],
+    "stat1Label": "Étudiant CS",
+    "stat1Value": "3ème Année",
+    "stat2Label": "Langues",
+    "stat2Value": "5+",
+    "stat3Label": "Outils IA",
+    "stat3Value": "8+",
+    "cta1": "Voir mes projets",
+    "cta2": "Me contacter",
+    "scroll": "Défiler"
+  },
+  "about": {
+    "sectionNum": "01",
+    "sectionTitle": "À Propos",
+    "bio1": "Je suis étudiant en 3ème année d'informatique à l'Université de Tokat Gaziosmanpaşa en Turquie, originaire de Ouagadougou, au Burkina Faso. Je construis des applications web, des systèmes IA et des produits digitaux qui résolvent de vrais problèmes en Afrique.",
+    "bio2": "Ma mission : faire partie de la génération qui bâtit la première licorne tech africaine de classe mondiale — en partant de zéro, brique par brique.",
+    "quote": "Je ne code pas juste. Je construis des avenirs.",
+    "locationLabel": "Localisation",
+    "locationValue": "Tokat, Turquie",
+    "availLabel": "Disponibilité",
+    "availValue": "Ouvert aux opportunités",
+    "langsLabel": "Langues",
+    "langsValue": "FR · EN · TR · Bambara · Mooré",
+    "emailLabel": "Email",
+    "emailValue": "docompaore2@gmail.com"
+  },
+  "ai": {
+    "sectionNum": "02",
+    "sectionTitle": "Système Agent IA",
+    "subtitle": "Une infrastructure IA locale orchestrant plusieurs agents via Claude comme cerveau central.",
+    "hub": "Claude",
+    "hubSub": "Orchestrateur",
+    "ollamaLabel": "Ollama Local"
+  },
+  "skills": {
+    "sectionNum": "03",
+    "sectionTitle": "Compétences",
+    "techTitle": "Technique",
+    "digitalTitle": "Marketing & Digital",
+    "tech": [
+      { "name": "Next.js", "level": 95 },
+      { "name": "TypeScript", "level": 85 },
+      { "name": "Python", "level": 80 },
+      { "name": "Tailwind CSS", "level": 90 },
+      { "name": "Framer Motion", "level": 85 },
+      { "name": "Supabase", "level": 75 },
+      { "name": "IA / Intégration LLM", "level": 88 }
+    ],
+    "digital": [
+      { "name": "Product Design", "level": 80 },
+      { "name": "UI/UX", "level": 85 },
+      { "name": "Stratégie de Marque", "level": 70 },
+      { "name": "SEO & Analytics", "level": 65 },
+      { "name": "Réseaux Sociaux", "level": 75 }
+    ]
+  },
+  "projects": {
+    "sectionNum": "04",
+    "sectionTitle": "Projets",
+    "subtitle": "De vrais produits. Un vrai impact.",
+    "liveLabel": "En ligne",
+    "demoBtn": "Démo",
+    "codeBtn": "Code"
+  },
+  "experience": {
+    "sectionNum": "05",
+    "sectionTitle": "Expérience",
+    "items": [
+      {
+        "year": "2024–Présent",
+        "title": "Fondateur & Développeur Principal",
+        "company": "MIFA Life Shop",
+        "desc": "Construction d'une plateforme e-commerce de style de vie africain avec Next.js et Supabase."
+      },
+      {
+        "year": "2024–Présent",
+        "title": "Fondateur & Architecte",
+        "company": "Problem to Project Africa",
+        "desc": "Conception d'une plateforme IA qui transforme les problèmes africains en projets tech concrets."
+      },
+      {
+        "year": "2023–Présent",
+        "title": "Étudiant CS",
+        "company": "Université Tokat Gaziosmanpaşa",
+        "desc": "3ème année d'informatique — spécialisation Software Engineering et Cybersécurité."
+      },
+      {
+        "year": "2023",
+        "title": "Constructeur de Systèmes IA",
+        "company": "African Hybrid Agent",
+        "desc": "Conception d'un système agent IA hybride local pour des cas d'usage africains via Ollama et Claude."
+      }
+    ]
+  },
+  "languages": {
+    "sectionNum": "06",
+    "sectionTitle": "Langues",
+    "items": [
+      { "lang": "Français", "level": "Natif", "flag": "🇧🇫" },
+      { "lang": "English", "level": "Courant", "flag": "🇬🇧" },
+      { "lang": "Türkçe", "level": "Conversationnel", "flag": "🇹🇷" },
+      { "lang": "Bambara", "level": "Natif", "flag": "🇲🇱" },
+      { "lang": "Mooré", "level": "Natif", "flag": "🇧🇫" }
+    ]
+  },
+  "contact": {
+    "sectionNum": "07",
+    "sectionTitle": "Construisons",
+    "subtitle": "Quelque chose d'extraordinaire.",
+    "formName": "Votre Nom",
+    "formEmail": "Votre Email",
+    "formMessage": "Votre Message",
+    "formBtn": "Envoyer",
+    "or": "ou contactez-moi directement"
+  },
+  "footer": {
+    "built": "Construit avec Next.js & Framer Motion",
+    "rights": "Tous droits réservés."
+  }
+}

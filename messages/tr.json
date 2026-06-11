@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "about": "Hakkımda",
+    "skills": "Beceriler",
+    "projects": "Projeler",
+    "ai": "AI Sistemi",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "greeting": "Merhaba, ben",
+    "name": "Steve Donald",
+    "lastName": "Compaore.",
+    "roles": ["Builder", "Ürün Tasarımcısı", "AI Mühendisi", "Girişimci"],
+    "stat1Label": "CS Öğrencisi",
+    "stat1Value": "3. Yıl",
+    "stat2Label": "Dil",
+    "stat2Value": "5+",
+    "stat3Label": "AI Araçları",
+    "stat3Value": "8+",
+    "cta1": "Projeleri Gör",
+    "cta2": "İletişime Geç",
+    "scroll": "Kaydır"
+  },
+  "about": {
+    "sectionNum": "01",
+    "sectionTitle": "Hakkımda",
+    "bio1": "Türkiye'deki Tokat Gaziosmanpaşa Üniversitesi'nde 3. sınıf Bilgisayar Mühendisliği öğrencisiyim. Burkina Faso'nun başkenti Ouagadougou'dan geliyorum. Afrika genelinde gerçek sorunları çözen web uygulamaları, AI sistemleri ve dijital ürünler geliştiriyorum.",
+    "bio2": "Misyonum: Afrika'nın dünya standartlarında ilk teknoloji şirketini inşa eden neslin bir parçası olmak.",
+    "quote": "Sadece kod yazmıyorum. Gelecekler inşa ediyorum.",
+    "locationLabel": "Konum",
+    "locationValue": "Tokat, Türkiye",
+    "availLabel": "Müsaitlik",
+    "availValue": "Fırsatlara Açık",
+    "langsLabel": "Diller",
+    "langsValue": "FR · EN · TR · Bambara · Mooré",
+    "emailLabel": "E-posta",
+    "emailValue": "docompaore2@gmail.com"
+  },
+  "ai": {
+    "sectionNum": "02",
+    "sectionTitle": "AI Ajan Sistemi",
+    "subtitle": "Claude'u merkezi beyin olarak kullanan, birden fazla ajanı yöneten yerel bir AI altyapısı.",
+    "hub": "Claude",
+    "hubSub": "Orkestratör",
+    "ollamaLabel": "Yerel Ollama"
+  },
+  "skills": {
+    "sectionNum": "03",
+    "sectionTitle": "Beceriler",
+    "techTitle": "Teknik",
+    "digitalTitle": "Pazarlama & Dijital",
+    "tech": [
+      { "name": "Next.js", "level": 95 },
+      { "name": "TypeScript", "level": 85 },
+      { "name": "Python", "level": 80 },
+      { "name": "Tailwind CSS", "level": 90 },
+      { "name": "Framer Motion", "level": 85 },
+      { "name": "Supabase", "level": 75 },
+      { "name": "AI / LLM Entegrasyonu", "level": 88 }
+    ],
+    "digital": [
+      { "name": "Ürün Tasarımı", "level": 80 },
+      { "name": "UI/UX", "level": 85 },
+      { "name": "Marka Stratejisi", "level": 70 },
+      { "name": "SEO & Analitik", "level": 65 },
+      { "name": "Sosyal Medya", "level": 75 }
+    ]
+  },
+  "projects": {
+    "sectionNum": "04",
+    "sectionTitle": "Projeler",
+    "subtitle": "Gerçek ürünler. Gerçek etki.",
+    "liveLabel": "Canlı",
+    "demoBtn": "Demo",
+    "codeBtn": "Kod"
+  },
+  "experience": {
+    "sectionNum": "05",
+    "sectionTitle": "Deneyim",
+    "items": [
+      {
+        "year": "2024–Günümüz",
+        "title": "Kurucu & Baş Geliştirici",
+        "company": "MIFA Life Shop",
+        "desc": "Next.js ve Supabase ile Afrika yaşam tarzı e-ticaret platformu geliştirme."
+      },
+      {
+        "year": "2024–Günümüz",
+        "title": "Kurucu & Mimar",
+        "company": "Problem to Project Africa",
+        "desc": "Afrika sorunlarını somut teknoloji projelerine dönüştüren AI destekli platform tasarlama."
+      },
+      {
+        "year": "2023–Günümüz",
+        "title": "CS Öğrencisi",
+        "company": "Tokat Gaziosmanpaşa Üniversitesi",
+        "desc": "3. sınıf Bilgisayar Mühendisliği — Yazılım Mühendisliği ve Siber Güvenlik uzmanlığı."
+      },
+      {
+        "year": "2023",
+        "title": "AI Sistem Geliştirici",
+        "company": "African Hybrid Agent",
+        "desc": "Ollama ve Claude kullanarak Afrika kullanım durumları için hibrit yerel AI ajan sistemi tasarlandı."
+      }
+    ]
+  },
+  "languages": {
+    "sectionNum": "06",
+    "sectionTitle": "Diller",
+    "items": [
+      { "lang": "Français", "level": "Anadil", "flag": "🇧🇫" },
+      { "lang": "English", "level": "Akıcı", "flag": "🇬🇧" },
+      { "lang": "Türkçe", "level": "Konuşma Düzeyinde", "flag": "🇹🇷" },
+      { "lang": "Bambara", "level": "Anadil", "flag": "🇲🇱" },
+      { "lang": "Mooré", "level": "Anadil", "flag": "🇧🇫" }
+    ]
+  },
+  "contact": {
+    "sectionNum": "07",
+    "sectionTitle": "Birlikte İnşa",
+    "subtitle": "Olağanüstü bir şeyler edelim.",
+    "formName": "Adınız",
+    "formEmail": "E-postanız",
+    "formMessage": "Mesajınız",
+    "formBtn": "Gönder",
+    "or": "veya doğrudan ulaşın"
+  },
+  "footer": {
+    "built": "Next.js & Framer Motion ile yapıldı",
+    "rights": "Tüm hakları saklıdır."
+  }
+}
