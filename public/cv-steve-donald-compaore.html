@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steve Donald Compaore — Resume</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f8fafc;
+      color: #111827;
+      line-height: 1.5;
+    }
+    .page {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 1120px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    }
+    /* SIDEBAR */
+    .sidebar {
+      background: #070e1f;
+      color: #f5f0e8;
+      padding: 2rem 1.5rem;
+    }
+    .photo-wrap {
+      width: 120px; height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #f0a832;
+      margin: 0 auto 1.5rem;
+    }
+    .photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .name {
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #f5f0e8;
+      margin-bottom: 0.25rem;
+    }
+    .title-tag {
+      text-align: center;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #f0a832;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .divider { height: 1px; background: #1f3054; margin: 1rem 0; }
+    .section-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #f0a832;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.78rem;
+      color: #9ba8c4;
+    }
+    .contact-item a { color: #2dd4ff; text-decoration: none; }
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+    .lang-name { font-size: 0.8rem; color: #f5f0e8; }
+    .lang-level {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #4e5f82;
+    }
+    .skill-tag {
+      display: inline-block;
+      background: #111d34;
+      color: #9ba8c4;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      margin: 0.15rem 0.1rem;
+    }
+    /* MAIN */
+    .main { padding: 2.5rem 2rem; }
+    .main-header { margin-bottom: 2rem; }
+    .main-name {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .main-title {
+      font-size: 0.9rem;
+      color: #f0a832;
+      font-weight: 600;
+      margin-top: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .main-section { margin-bottom: 1.75rem; }
+    .main-section-title {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #f0a832;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid #f0a832;
+    }
+    .entry { margin-bottom: 1.1rem; }
+    .entry-header { display: flex; justify-content: space-between; align-items: flex-start; }
+    .entry-title { font-size: 0.9rem; font-weight: 700; color: #111827; }
+    .entry-date { font-size: 0.75rem; color: #6b7280; font-family: monospace; }
+    .entry-sub { font-size: 0.78rem; color: #0ea5e9; font-weight: 500; margin-top: 0.1rem; }
+    .entry-desc { font-size: 0.78rem; color: #4b5563; margin-top: 0.3rem; }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.4rem; }
+    .tag {
+      font-size: 0.65rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-family: monospace;
+      font-weight: 600;
+    }
+    .tag-blue { background: #eff6ff; color: #1d4ed8; }
+    .tag-gold { background: #fffbeb; color: #b45309; }
+    .tag-green { background: #f0fdf4; color: #15803d; }
+    .tag-purple { background: #faf5ff; color: #7c3aed; }
+    .live-link { font-size: 0.72rem; color: #0ea5e9; text-decoration: none; margin-top: 0.3rem; display: block; }
+    .edu-entry { display: flex; gap: 1rem; margin-bottom: 0.9rem; }
+    .edu-dot {
+      width: 8px; height: 8px;
+      background: #f0a832;
+      border-radius: 50%;
+      margin-top: 0.3rem;
+      flex-shrink: 0;
+    }
+    @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      body { background: white; }
+      .page { margin: 0; box-shadow: none; min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="photo-wrap">
+      <img src="/steve-photo.jpg" alt="Steve Donald Compaore" />
+    </div>
+    <div class="name">Steve Donald</div>
+    <div class="name" style="margin-bottom:0.1rem">Compaore</div>
+    <div class="title-tag">Dev · AI · Builder</div>
+
+    <div class="divider"></div>
+    <div class="section-label">Contact</div>
+    <div class="contact-item">📧 <a href="mailto:docompaore2@gmail.com">docompaore2@gmail.com</a></div>
+    <div class="contact-item">🐙 <a href="https://github.com/dosteeve2-hash">github.com/dosteeve2-hash</a></div>
+    <div class="contact-item">📍 Tokat, Türkiye</div>
+    <div class="contact-item">🌐 <a href="https://steeve-portfolio-mocha.vercel.app">Portfolio</a></div>
+
+    <div class="divider"></div>
+    <div class="section-label">Languages</div>
+    <div class="lang-item"><span class="lang-name">🇫🇷 Français</span><span class="lang-level">Natif</span></div>
+    <div class="lang-item"><span class="lang-name">🇬🇧 English</span><span class="lang-level">C1 Fluent</span></div>
+    <div class="lang-item"><span class="lang-name">🇹🇷 Türkçe</span><span class="lang-level">B2</span></div>
+    <div class="lang-item"><span class="lang-name">🌍 Bambara</span><span class="lang-level">Natif</span></div>
+    <div class="lang-item"><span class="lang-name">🌍 Mooré</span><span class="lang-level">Natif</span></div>
+
+    <div class="divider"></div>
+    <div class="section-label">Core Skills</div>
+    <span class="skill-tag">Next.js</span>
+    <span class="skill-tag">TypeScript</span>
+    <span class="skill-tag">React</span>
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">Tailwind CSS</span>
+    <span class="skill-tag">Framer Motion</span>
+    <span class="skill-tag">Supabase</span>
+    <span class="skill-tag">PostgreSQL</span>
+    <span class="skill-tag">Claude API</span>
+    <span class="skill-tag">Ollama</span>
+    <span class="skill-tag">LLM Engineering</span>
+    <span class="skill-tag">Git / GitHub</span>
+    <span class="skill-tag">Vercel</span>
+    <span class="skill-tag">Figma</span>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+    <div class="main-header">
+      <div class="main-name">Steve Donald<br>Compaore</div>
+      <div class="main-title">Full-Stack Developer · AI Engineer · Builder</div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="main-section">
+      <div class="main-section-title">Profile</div>
+      <p style="font-size:0.83rem;color:#374151;line-height:1.6">
+        3rd-year Computer Engineering student at Gaziosmanpaşa University, passionate about building digital solutions for Africa. Fluent in 5 languages, experienced with modern web stacks and AI agent orchestration. Founder of multiple live products. Currently seeking internship and collaboration opportunities in AI, product development, or full-stack engineering.
+      </p>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="main-section">
+      <div class="main-section-title">Featured Projects</div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">AURA Pro — Apple-style Phone Showcase</div>
+          <div class="entry-date">2025</div>
+        </div>
+        <div class="tag-list">
+          <span class="tag tag-blue">Next.js 16</span>
+          <span class="tag tag-purple">Framer Motion</span>
+          <span class="tag tag-gold">Tailwind v4</span>
+        </div>
+        <a href="https://phone-showcase-nu.vercel.app" class="live-link">🔗 phone-showcase-nu.vercel.app</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">MIFA Life Shop — E-commerce Platform</div>
+          <div class="entry-date">2024 – 2025</div>
+        </div>
+        <div class="entry-desc">Full-stack e-commerce platform for African lifestyle products.</div>
+        <div class="tag-list">
+          <span class="tag tag-blue">Next.js</span>
+          <span class="tag tag-green">Supabase</span>
+          <span class="tag tag-blue">TypeScript</span>
+        </div>
+        <a href="https://mifa-life-shop-9k55.vercel.app" class="live-link">🔗 mifa-life-shop-9k55.vercel.app</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">Problem to Projects Africa</div>
+          <div class="entry-date">2024</div>
+        </div>
+        <div class="entry-desc">Platform connecting African problems to builders and solutions.</div>
+        <div class="tag-list">
+          <span class="tag tag-blue">TypeScript</span>
+          <span class="tag tag-blue">Next.js</span>
+        </div>
+        <a href="https://problem-to-projects-africa.vercel.app" class="live-link">🔗 problem-to-projects-africa.vercel.app</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">African Hybrid AI Agent System</div>
+          <div class="entry-date">2024</div>
+        </div>
+        <div class="entry-desc">Multi-agent AI orchestration system tailored for African use cases with Claude API + Ollama local LLM.</div>
+        <div class="tag-list">
+          <span class="tag tag-purple">Claude API</span>
+          <span class="tag tag-gold">Ollama</span>
+          <span class="tag tag-blue">TypeScript</span>
+        </div>
+        <a href="https://burkinacollect.vercel.app" class="live-link">🔗 burkinacollect.vercel.app</a>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <div class="entry-title">AI Agent System — Claude Orchestrator</div>
+          <div class="entry-date">2025</div>
+        </div>
+        <div class="entry-desc">Personal productivity system with 8-agent architecture using Claude API and local Ollama LLM.</div>
+        <div class="tag-list">
+          <span class="tag tag-purple">Claude API</span>
+          <span class="tag tag-gold">Ollama</span>
+          <span class="tag tag-green">8-agent arch</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="main-section">
+      <div class="main-section-title">Education</div>
+
+      <div class="edu-entry">
+        <div class="edu-dot"></div>
+        <div>
+          <div class="entry-title">Computer Engineering, Bachelor</div>
+          <div class="entry-sub">Gaziosmanpaşa University (GOP) — Tokat, Türkiye</div>
+          <div class="entry-date" style="margin-top:0.2rem">2022 – 2026 (expected) · GPA 3.8 / 4.0</div>
+        </div>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-dot"></div>
+        <div>
+          <div class="entry-title">Turkish Language Program</div>
+          <div class="entry-sub">TÖMER Language Center — Türkiye</div>
+          <div class="entry-date" style="margin-top:0.2rem">2022 – 2023</div>
+        </div>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-dot"></div>
+        <div>
+          <div class="entry-title">Baccalauréat Scientifique — Mention Bien</div>
+          <div class="entry-sub">Burkina Faso</div>
+          <div class="entry-date" style="margin-top:0.2rem">2022</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

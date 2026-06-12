@@ -168,39 +168,47 @@ export default function Hero() {
             >
               {t("cta2")}
             </a>
+            <a
+              href="/cv-steve-donald-compaore.html"
+              target="_blank"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-[#f0a832]/40 text-[#f0a832] font-mono text-sm uppercase tracking-widest rounded-lg hover:bg-[#f0a832]/10 transition-all duration-300"
+            >
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Download CV
+            </a>
           </motion.div>
         </motion.div>
 
-        {/* Right — Avatar placeholder */}
+        {/* Right — Profile photo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="hidden md:flex items-center justify-center"
         >
-          <div className="relative w-80 h-80 lg:w-96 lg:h-96">
-            {/* Outer glow ring */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold/20 to-accent-cyan/20 blur-3xl" />
-            {/* Photo frame */}
-            <div className="relative w-full h-full rounded-full border-2 border-gold/30 overflow-hidden bg-gradient-to-br from-bg-2 to-bg-3 flex items-center justify-center">
-              {/* Avatar placeholder with SDC initials */}
-              <div className="text-center">
-                <div className="text-8xl font-playfair font-bold italic text-gold/60 select-none">
-                  SDC
-                </div>
-                <div className="text-xs font-mono text-text-primary-3 mt-2 uppercase tracking-widest">
-                  Steve Donald
-                </div>
-              </div>
-              {/* Decorative circles */}
-              <div className="absolute inset-4 rounded-full border border-gold/10" />
-              <div className="absolute inset-8 rounded-full border border-gold/5" />
-            </div>
+          <div className="relative w-72 lg:w-80">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#f0a832]/20 to-[#2dd4ff]/20 blur-2xl" />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative rounded-2xl overflow-hidden border border-[#1f3054]"
+              style={{ aspectRatio: "4/5" }}
+            >
+              <img
+                src="/steve-photo.jpg"
+                alt="Steve Donald Compaore"
+                className="w-full h-full object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#070e1f]/40 to-transparent" />
+            </motion.div>
             {/* Floating badge */}
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-2 -right-4 bg-bg-2 border border-border rounded-2xl px-4 py-2 flex items-center gap-2 shadow-xl"
+              className="absolute -bottom-4 -right-4 bg-bg-2 border border-border rounded-2xl px-4 py-2 flex items-center gap-2 shadow-xl"
             >
               <span className="w-2 h-2 rounded-full bg-accent-green animate-pulse" />
               <span className="text-xs font-mono text-text-primary-2 uppercase tracking-wider">Available</span>
