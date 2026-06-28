@@ -106,7 +106,7 @@ export default function About() {
                     SDC
                   </div>
                   <div className="mt-4 font-outfit text-text-primary-2 text-sm">
-                    Steve Donald Compaore
+                    Steeve Donald Compaore
                   </div>
                   <div className="mt-1 font-mono text-xs text-text-primary-3 uppercase tracking-widest">
                     Ouagadougou → Tokat → World

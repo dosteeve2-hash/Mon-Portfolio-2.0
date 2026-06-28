@@ -199,7 +199,7 @@ export default function Hero() {
             >
               <img
                 src="/steve-photo.jpg"
-                alt="Steve Donald Compaore"
+                alt="Steeve Donald Compaore"
                 className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#070e1f]/40 to-transparent" />

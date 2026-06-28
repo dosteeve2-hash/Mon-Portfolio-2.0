@@ -8,7 +8,7 @@
   },
   "hero": {
     "greeting": "Merhaba, ben",
-    "name": "Steve Donald",
+    "name": "Steeve Donald",
     "lastName": "Compaore.",
     "roles": ["Builder", "Ürün Tasarımcısı", "AI Mühendisi", "Girişimci"],
     "stat1Label": "CS Öğrencisi",

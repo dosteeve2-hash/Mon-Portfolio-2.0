@@ -6,6 +6,7 @@ import Skills from "@/components/sections/Skills";
 import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
 import Languages from "@/components/sections/Languages";
+import GitHubStats from "@/components/sections/GitHubStats";
 import Contact from "@/components/sections/Contact";
 
 export default function HomePage() {
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Projects />
       <Experience />
       <Languages />
+      <GitHubStats />
       <Contact />
     </>
   );

@@ -25,20 +25,20 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Steve Donald Compaore — Portfolio",
+  title: "Steeve Donald Compaore — Portfolio",
   description:
     "Builder, AI Engineer & Product Designer from Burkina Faso. Building Africa's tech future.",
   keywords: [
-    "Steve Donald Compaore",
+    "Steeve Donald Compaore",
     "Portfolio",
     "AI Engineer",
     "Next.js",
     "Africa Tech",
     "Burkina Faso",
   ],
-  authors: [{ name: "Steve Donald Compaore", url: "https://github.com/dosteeve2-hash" }],
+  authors: [{ name: "Steeve Donald Compaore", url: "https://github.com/dosteeve2-hash" }],
   openGraph: {
-    title: "Steve Donald Compaore — Portfolio",
+    title: "Steeve Donald Compaore — Portfolio",
     description: "Builder. AI Engineer. Product Designer. Building Africa's tech future.",
     type: "website",
   },

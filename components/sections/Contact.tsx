@@ -40,7 +40,7 @@ const SOCIALS = [
   },
   {
     label: "LinkedIn",
-    value: "Steve Donald Compaore",
+    value: "Steeve Donald Compaore",
     href: "https://linkedin.com/in/steve-donald-compaore",
     icon: <LinkedinIcon />,
     color: "#0A66C2",

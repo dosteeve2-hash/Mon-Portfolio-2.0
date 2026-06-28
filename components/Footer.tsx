@@ -14,7 +14,7 @@ export default function Footer() {
           <span className="font-mono text-xs text-text-primary-3">{t("built")}</span>
           <span className="hidden sm:block text-text-primary-3">·</span>
           <span className="font-mono text-xs text-text-primary-3">
-            © {new Date().getFullYear()} Steve Donald Compaore — {t("rights")}
+            © {new Date().getFullYear()} Steeve Donald Compaore — {t("rights")}
           </span>
         </div>
         <a
