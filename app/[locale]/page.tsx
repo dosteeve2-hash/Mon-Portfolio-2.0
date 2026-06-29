@@ -3,6 +3,7 @@ import Ticker from "@/components/sections/Ticker";
 import About from "@/components/sections/About";
 import AISystem from "@/components/sections/AISystem";
 import Skills from "@/components/sections/Skills";
+import SkillsSection from "@/components/SkillsSection";
 import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
 import Languages from "@/components/sections/Languages";
@@ -17,6 +18,7 @@ export default function HomePage() {
       <About />
       <AISystem />
       <Skills />
+      <SkillsSection />
       <Projects />
       <Experience />
       <Languages />
