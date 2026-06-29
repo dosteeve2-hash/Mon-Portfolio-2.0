@@ -3,6 +3,7 @@ import { getMessages } from "next-intl/server";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
+import BackToTop from "@/components/BackToTop";
 
 export default async function LocaleLayout({
   children,
@@ -20,6 +21,7 @@ export default async function LocaleLayout({
       <Navbar />
       <main>{children}</main>
       <Footer />
+      <BackToTop />
     </NextIntlClientProvider>
   );
 }

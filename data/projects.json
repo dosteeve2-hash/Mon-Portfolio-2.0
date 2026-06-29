@@ -37,6 +37,42 @@
   },
   {
     "id": 4,
+    "title": "TAAMA",
+    "description": "B2B SaaS for African agro-industrial SMEs — production tracking, stock management, EUDR compliance reports.",
+    "descFr": "SaaS B2B pour PME agro-industrielles africaines — suivi de production, gestion stocks, rapports de conformité EUDR.",
+    "descTr": "Afrika'nın tarım-sanayi KOBİ'leri için B2B SaaS — üretim takibi, stok yönetimi, EUDR uyumluluk raporları.",
+    "stack": ["Next.js", "Supabase", "TypeScript", "Tailwind"],
+    "live": "https://taama.vercel.app",
+    "github": "https://github.com/dosteeve2-hash/taama",
+    "featured": true,
+    "color": "#f0a832"
+  },
+  {
+    "id": 5,
+    "title": "UEEMT-Tokat",
+    "description": "Full-stack community platform for West African students in Turkey — members, events, news feed, treasury management.",
+    "descFr": "Plateforme communautaire full-stack pour étudiants ouest-africains en Turquie — membres, événements, feed, gestion caisse.",
+    "descTr": "Türkiye'deki Batı Afrikalı öğrenciler için full-stack topluluk platformu — üyeler, etkinlikler, feed, kasa yönetimi.",
+    "stack": ["Next.js", "Supabase", "TypeScript", "Tailwind"],
+    "live": "https://ueemt-tokat.vercel.app",
+    "github": "https://github.com/dosteeve2-hash/ueemt-tokat",
+    "featured": true,
+    "color": "#22d98a"
+  },
+  {
+    "id": 6,
+    "title": "CompTrack",
+    "description": "Simplified accounting platform for African micro-enterprises — transactions, invoices, reports in FCFA.",
+    "descFr": "Comptabilité simplifiée pour TPE/PME africaines — transactions, factures, rapports en FCFA.",
+    "descTr": "Afrika'nın mikro işletmeleri için basitleştirilmiş muhasebe — işlemler, faturalar, FCFA raporları.",
+    "stack": ["Next.js", "Supabase", "TypeScript", "Recharts"],
+    "live": "https://comptrack.vercel.app",
+    "github": "https://github.com/dosteeve2-hash/comptrack",
+    "featured": true,
+    "color": "#22c55e"
+  },
+  {
+    "id": 7,
     "title": "African Hybrid Agent",
     "description": "Local AI agent system combining Ollama and Claude for African context-aware automation.",
     "descFr": "Système agent IA local combinant Ollama et Claude pour une automatisation adaptée au contexte africain.",
@@ -44,11 +80,11 @@
     "stack": ["TypeScript", "AI/LLM", "Ollama", "Claude"],
     "live": "https://african-hybrid-agent.vercel.app",
     "github": "https://github.com/dosteeve2-hash/african-hybrid-agent",
-    "featured": true,
+    "featured": false,
     "color": "#f7c060"
   },
   {
-    "id": 5,
+    "id": 8,
     "title": "BurkinaCollect",
     "description": "Data collection and aggregation platform designed for the Burkinabè digital ecosystem.",
     "descFr": "Plateforme de collecte et d'agrégation de données conçue pour l'écosystème numérique burkinabè.",
@@ -57,5 +93,16 @@
     "github": "https://github.com/dosteeve2-hash/burkinacollect",
     "featured": false,
     "color": "#9ba8c4"
+  },
+  {
+    "id": 9,
+    "title": "Forge Afrika",
+    "description": "Digital innovation hub platform connecting African developers, makers and entrepreneurs to build, share and fund tech projects.",
+    "descFr": "Plateforme de hub d'innovation numérique connectant développeurs, makers et entrepreneurs africains pour construire, partager et financer des projets tech.",
+    "descTr": "Afrika'lı geliştiricileri, yapımcıları ve girişimcileri teknoloji projeleri inşa etmek, paylaşmak ve finanse etmek için birleştiren dijital inovasyon merkezi platformu.",
+    "stack": ["Next.js", "TypeScript", "Tailwind", "Supabase"],
+    "github": "https://github.com/dosteeve2-hash/forge-afrika",
+    "featured": false,
+    "color": "#ff6b35"
   }
 ]
