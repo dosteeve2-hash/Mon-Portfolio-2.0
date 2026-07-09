@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, animate } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { ArrowDown, ExternalLink } from "lucide-react";
+import { ArrowDown, ExternalLink, Download } from "lucide-react";
 import Image from "next/image";
 import { LogoWatermark } from "../Logo";
 
@@ -178,6 +178,14 @@ export default function Hero() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
               Download CV
+            </a>
+            <a
+              href="/cv-steve-tr.pdf"
+              download="CV-Steeve-Donald-Compaore-TR.pdf"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-[#D4AF37] text-[#D4AF37] rounded-lg hover:bg-[#D4AF37] hover:text-[#0A1628] transition-all font-medium"
+            >
+              <Download size={16} />
+              Télécharger CV (TR)
             </a>
           </motion.div>
         </motion.div>
