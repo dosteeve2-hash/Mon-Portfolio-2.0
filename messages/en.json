@@ -8,7 +8,7 @@
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "name": "Steve Donald",
+    "name": "Steeve Donald",
     "lastName": "Compaore.",
     "roles": ["Builder", "Product Designer", "AI Engineer", "Entrepreneur"],
     "stat1Label": "CS Student",
@@ -72,7 +72,9 @@
     "subtitle": "Real products. Real impact.",
     "liveLabel": "Live",
     "demoBtn": "Demo",
-    "codeBtn": "Code"
+    "codeBtn": "Code",
+    "statusProduction": "In Production",
+    "statusDev": "In Development"
   },
   "experience": {
     "sectionNum": "05",
@@ -124,6 +126,25 @@
     "formMessage": "Your Message",
     "formBtn": "Send Message",
     "or": "or reach me directly"
+  },
+  "contactPage": {
+    "title": "Let's Work Together",
+    "subtitle": "Got a project, a collaboration idea, or an opportunity? I'm listening.",
+    "subjectLabel": "Subject",
+    "subjectProject": "Project",
+    "subjectCollab": "Collaboration",
+    "subjectJob": "Employment",
+    "subjectOther": "Other",
+    "namePlaceholder": "Your Name",
+    "emailPlaceholder": "Your Email",
+    "messagePlaceholder": "Your Message",
+    "sendBtn": "Send Message",
+    "sending": "Sending...",
+    "sent": "Sent!",
+    "contactTitle": "Contact",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub"
   },
   "footer": {
     "built": "Built with Next.js & Framer Motion",

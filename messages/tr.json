@@ -8,7 +8,7 @@
   },
   "hero": {
     "greeting": "Merhaba, ben",
-    "name": "Steve Donald",
+    "name": "Steeve Donald",
     "lastName": "Compaore.",
     "roles": ["Builder", "Ürün Tasarımcısı", "AI Mühendisi", "Girişimci"],
     "stat1Label": "CS Öğrencisi",
@@ -72,7 +72,9 @@
     "subtitle": "Gerçek ürünler. Gerçek etki.",
     "liveLabel": "Canlı",
     "demoBtn": "Demo",
-    "codeBtn": "Kod"
+    "codeBtn": "Kod",
+    "statusProduction": "Üretimde",
+    "statusDev": "Geliştirmede"
   },
   "experience": {
     "sectionNum": "05",
@@ -124,6 +126,25 @@
     "formMessage": "Mesajınız",
     "formBtn": "Gönder",
     "or": "veya doğrudan ulaşın"
+  },
+  "contactPage": {
+    "title": "Birlikte Çalışalım",
+    "subtitle": "Bir proje, iş birliği fikri veya fırsat mı var? Dinliyorum.",
+    "subjectLabel": "Konu",
+    "subjectProject": "Proje",
+    "subjectCollab": "İş Birliği",
+    "subjectJob": "İstihdam",
+    "subjectOther": "Diğer",
+    "namePlaceholder": "Adınız",
+    "emailPlaceholder": "E-postanız",
+    "messagePlaceholder": "Mesajınız",
+    "sendBtn": "Gönder",
+    "sending": "Gönderiliyor...",
+    "sent": "Gönderildi!",
+    "contactTitle": "İletişim",
+    "emailLabel": "E-posta",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub"
   },
   "footer": {
     "built": "Next.js & Framer Motion ile yapıldı",

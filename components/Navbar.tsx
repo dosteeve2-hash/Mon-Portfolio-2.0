@@ -50,7 +50,7 @@ export default function Navbar() {
     { href: "#skills", label: t("skills") },
     { href: "#projects", label: t("projects") },
     { href: "#ai", label: t("ai") },
-    { href: "#contact", label: t("contact") },
+    { href: `/${locale}/contact`, label: t("contact") },
   ];
 
   return (

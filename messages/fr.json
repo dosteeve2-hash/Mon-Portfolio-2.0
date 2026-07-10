@@ -8,7 +8,7 @@
   },
   "hero": {
     "greeting": "Bonjour, je suis",
-    "name": "Steve Donald",
+    "name": "Steeve Donald",
     "lastName": "Compaore.",
     "roles": ["Builder", "Product Designer", "Ingénieur IA", "Entrepreneur"],
     "stat1Label": "Étudiant CS",
@@ -72,7 +72,9 @@
     "subtitle": "De vrais produits. Un vrai impact.",
     "liveLabel": "En ligne",
     "demoBtn": "Démo",
-    "codeBtn": "Code"
+    "codeBtn": "Code",
+    "statusProduction": "En production",
+    "statusDev": "En développement"
   },
   "experience": {
     "sectionNum": "05",
@@ -124,6 +126,25 @@
     "formMessage": "Votre Message",
     "formBtn": "Envoyer",
     "or": "ou contactez-moi directement"
+  },
+  "contactPage": {
+    "title": "Travaillons ensemble",
+    "subtitle": "Un projet, une idée de collaboration, une opportunité ? Je vous écoute.",
+    "subjectLabel": "Sujet",
+    "subjectProject": "Projet",
+    "subjectCollab": "Collaboration",
+    "subjectJob": "Emploi",
+    "subjectOther": "Autre",
+    "namePlaceholder": "Votre Nom",
+    "emailPlaceholder": "Votre Email",
+    "messagePlaceholder": "Votre Message",
+    "sendBtn": "Envoyer",
+    "sending": "Envoi...",
+    "sent": "Envoyé !",
+    "contactTitle": "Contact",
+    "emailLabel": "Email",
+    "linkedinLabel": "LinkedIn",
+    "githubLabel": "GitHub"
   },
   "footer": {
     "built": "Construit avec Next.js & Framer Motion",
