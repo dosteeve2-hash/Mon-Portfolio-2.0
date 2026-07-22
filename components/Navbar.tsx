@@ -67,7 +67,11 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+          <a
+            href="#"
+            aria-label="Retour en haut de page"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <Logo size="sm" />
           </a>
 
@@ -106,6 +110,7 @@ export default function Navbar() {
             {/* Theme toggle */}
             <button
               onClick={toggleTheme}
+              aria-label={dark ? "Passer en mode clair" : "Passer en mode sombre"}
               className="w-9 h-9 rounded-full border border-border bg-bg-2/80 flex items-center justify-center text-text-primary-2 hover:text-gold hover:border-gold transition-all duration-200"
             >
               {dark ? <Sun size={16} /> : <Moon size={16} />}
@@ -115,6 +120,8 @@ export default function Navbar() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={menuOpen}
             className="md:hidden w-9 h-9 flex items-center justify-center text-text-primary-2 hover:text-gold transition-colors"
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}

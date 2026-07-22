@@ -27,30 +27,29 @@ export default function AnimatedCounter({
     const el = ref.current;
     if (!el) return;
 
-    const obj = { value: 0 };
-
-    const trigger = ScrollTrigger.create({
-      trigger: el,
-      start: "top 85%",
-      once: true,
-      onEnter: () => {
-        gsap.to(obj, {
-          value: target,
-          duration,
-          ease: "power2.out",
-          onUpdate: () => {
-            el.textContent = `${prefix}${Math.floor(obj.value)}${suffix}`;
-          },
-          onComplete: () => {
-            el.textContent = `${prefix}${target}${suffix}`;
-          },
-        });
-      },
+    const ctx = gsap.context(() => {
+      const obj = { value: 0 };
+      ScrollTrigger.create({
+        trigger: el,
+        start: "top 85%",
+        once: true,
+        onEnter: () => {
+          gsap.to(obj, {
+            value: target,
+            duration,
+            ease: "power2.out",
+            onUpdate: () => {
+              el.textContent = `${prefix}${Math.floor(obj.value)}${suffix}`;
+            },
+            onComplete: () => {
+              el.textContent = `${prefix}${target}${suffix}`;
+            },
+          });
+        },
+      });
     });
 
-    return () => {
-      trigger.kill();
-    };
+    return () => ctx.revert();
   }, [target, suffix, prefix, duration]);
 
   return (

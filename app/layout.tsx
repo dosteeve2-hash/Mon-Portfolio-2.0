@@ -41,6 +41,14 @@ export const metadata: Metadata = {
     title: "Steeve Donald Compaore — Portfolio",
     description: "Builder. AI Engineer. Product Designer. Building Africa's tech future.",
     type: "website",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1200&auto=format&fit=crop&q=80",
+        width: 1200,
+        height: 630,
+        alt: "Steeve Donald Compaore — Portfolio",
+      },
+    ],
   },
 };
 
