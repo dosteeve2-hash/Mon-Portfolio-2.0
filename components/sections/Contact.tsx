@@ -41,14 +41,14 @@ const SOCIALS = [
   {
     label: "LinkedIn",
     value: "Steeve Donald Compaore",
-    href: "https://linkedin.com/in/steve-donald-compaore",
+    href: "https://www.linkedin.com/in/steeve-donald-compaoré-65ba13296",
     icon: <LinkedinIcon />,
     color: "#0A66C2",
   },
   {
     label: "Instagram",
-    value: "@stevedonald_bf",
-    href: "https://instagram.com/stevedonald_bf",
+    value: "@steeve_donald_compaore",
+    href: "https://www.instagram.com/steeve_donald_compaore",
     icon: <InstagramIcon />,
     color: "#E1306C",
   },

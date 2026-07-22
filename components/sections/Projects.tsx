@@ -1,16 +1,16 @@
-﻿"use client";
+"use client";
 
 import { useRef } from "react";
 import { motion, useInView, useMotionValue, useTransform, useSpring } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { ExternalLink } from "lucide-react";
+import projectsData from "@/data/projects.json";
 
 const GithubIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
   </svg>
 );
-import projectsData from "@/data/projects.json";
 
 interface Project {
   id: number;
@@ -21,12 +21,36 @@ interface Project {
   stack: string[];
   live?: string;
   github: string;
+  status: "production" | "dev";
   featured: boolean;
   color: string;
 }
 
-function TiltCard({ project, index }: { project: Project; index: number }) {
+const FEATURED_IDS = [4, 6, 5, 2, 7, 3];
+
+function StatusBadge({ status }: { status: "production" | "dev" }) {
   const t = useTranslations("projects");
+  if (status === "production") {
+    return (
+      <div className="flex items-center gap-1.5 mb-4">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#22d98a] animate-pulse" />
+        <span className="font-mono text-[10px] text-[#22d98a] uppercase tracking-widest">
+          {t("statusProduction")}
+        </span>
+      </div>
+    );
+  }
+  return (
+    <div className="flex items-center gap-1.5 mb-4">
+      <span className="w-1.5 h-1.5 rounded-full bg-[#f7c060] animate-pulse" />
+      <span className="font-mono text-[10px] text-[#f7c060] uppercase tracking-widest">
+        {t("statusDev")}
+      </span>
+    </div>
+  );
+}
+
+function TiltCard({ project, index }: { project: Project; index: number }) {
   const locale = useLocale();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -40,18 +64,28 @@ function TiltCard({ project, index }: { project: Project; index: number }) {
     x.set(e.clientX - rect.left - rect.width / 2);
     y.set(e.clientY - rect.top - rect.height / 2);
   };
-  const handleMouseLeave = () => { x.set(0); y.set(0); };
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  const desc = locale === "fr" ? project.descFr : locale === "tr" ? project.descTr : project.description;
+  const desc =
+    locale === "fr"
+      ? project.descFr
+      : locale === "tr"
+      ? project.descTr
+      : project.description;
+
+  const t = useTranslations("projects");
 
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.55, delay: index * 0.1, ease: "easeOut" }}
       style={{ perspective: 1000 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -59,8 +93,8 @@ function TiltCard({ project, index }: { project: Project; index: number }) {
       <motion.div
         style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
         className="group relative h-full rounded-2xl border border-border-2 bg-bg-3/80 backdrop-blur-sm p-6 cursor-pointer
-          hover:border-opacity-60 hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-shadow duration-300"
-        whileHover={{ scale: 1.02 }}
+          hover:border-[#00b4d8]/60 hover:shadow-[0_20px_60px_rgba(0,180,216,0.12)] transition-all duration-300"
+        whileHover={{ scale: 1.025 }}
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
       >
         {/* Color accent bar */}
@@ -69,16 +103,11 @@ function TiltCard({ project, index }: { project: Project; index: number }) {
           style={{ backgroundColor: project.color }}
         />
 
-        {/* Live badge */}
-        {project.live && (
-          <div className="flex items-center gap-1.5 mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent-green animate-pulse" />
-            <span className="font-mono text-[10px] text-accent-green uppercase tracking-widest">{t("liveLabel")}</span>
-          </div>
-        )}
+        {/* Status badge */}
+        <StatusBadge status={project.status} />
 
         {/* Title */}
-        <h3 className="font-playfair text-xl font-bold italic text-text-primary mb-3 group-hover:text-gold transition-colors duration-300">
+        <h3 className="font-playfair text-xl font-bold italic text-text-primary mb-3 group-hover:text-[#00b4d8] transition-colors duration-300">
           {project.title}
         </h3>
 
@@ -118,7 +147,7 @@ function TiltCard({ project, index }: { project: Project; index: number }) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-outfit font-semibold border border-border text-text-primary-2 hover:border-gold/50 hover:text-gold transition-all duration-200"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-outfit font-semibold border border-border text-text-primary-2 hover:border-[#00b4d8]/50 hover:text-[#00b4d8] transition-all duration-200"
           >
             <GithubIcon />
             {t("codeBtn")}
@@ -134,11 +163,25 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } },
 };
 
+const staggerContainer = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 export default function Projects() {
   const t = useTranslations("projects");
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const projects = projectsData as Project[];
+
+  const allProjects = projectsData as Project[];
+  const projects = FEATURED_IDS.map((id) =>
+    allProjects.find((p) => p.id === id)
+  ).filter(Boolean) as Project[];
 
   return (
     <section id="projects" ref={ref} className="py-32 bg-bg dark:bg-bg">
@@ -150,23 +193,37 @@ export default function Projects() {
           variants={{ show: { transition: { staggerChildren: 0.1 } } }}
           className="mb-16"
         >
-          <motion.p variants={fadeUp} className="font-mono text-xs text-gold uppercase tracking-[0.3em] mb-2">
+          <motion.p
+            variants={fadeUp}
+            className="font-mono text-xs text-gold uppercase tracking-[0.3em] mb-2"
+          >
             {t("sectionNum")}
           </motion.p>
-          <motion.h2 variants={fadeUp} className="font-playfair text-5xl md:text-6xl font-bold italic text-text-primary">
+          <motion.h2
+            variants={fadeUp}
+            className="font-playfair text-5xl md:text-6xl font-bold italic text-text-primary"
+          >
             {t("sectionTitle")}
           </motion.h2>
-          <motion.p variants={fadeUp} className="mt-4 font-playfair text-xl italic text-text-primary-2">
+          <motion.p
+            variants={fadeUp}
+            className="mt-4 font-playfair text-xl italic text-text-primary-2"
+          >
             {t("subtitle")}
           </motion.p>
         </motion.div>
 
-        {/* Projects grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Projects grid with stagger */}
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          initial="hidden"
+          animate={isInView ? "show" : "hidden"}
+          variants={staggerContainer}
+        >
           {projects.map((project, i) => (
             <TiltCard key={project.id} project={project} index={i} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

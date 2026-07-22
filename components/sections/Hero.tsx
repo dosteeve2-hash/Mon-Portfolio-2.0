@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, animate } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { ArrowDown, ExternalLink } from "lucide-react";
+import { ArrowDown, ExternalLink, Download } from "lucide-react";
+import Image from "next/image";
 import { LogoWatermark } from "../Logo";
 
 function useTypewriter(words: string[], speed = 90) {
@@ -178,6 +179,14 @@ export default function Hero() {
               </svg>
               Download CV
             </a>
+            <a
+              href="/cv-steve-tr.pdf"
+              download="CV-Steeve-Donald-Compaore-TR.pdf"
+              className="inline-flex items-center gap-2 px-6 py-3 border border-[#D4AF37] text-[#D4AF37] rounded-lg hover:bg-[#D4AF37] hover:text-[#0A1628] transition-all font-medium"
+            >
+              <Download size={16} />
+              Télécharger CV (TR)
+            </a>
           </motion.div>
         </motion.div>
 
@@ -197,10 +206,13 @@ export default function Hero() {
               className="relative rounded-2xl overflow-hidden border border-[#1f3054]"
               style={{ aspectRatio: "4/5" }}
             >
-              <img
-                src="/steve-photo.jpg"
+              <Image
+                src="/steve-portrait.jpg"
                 alt="Steeve Donald Compaore"
+                width={400}
+                height={500}
                 className="w-full h-full object-cover object-top"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#070e1f]/40 to-transparent" />
             </motion.div>

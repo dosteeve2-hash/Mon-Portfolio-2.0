@@ -11,9 +11,9 @@ const config: Config = {
     extend: {
       colors: {
         bg: {
-          DEFAULT: "#070e1f",
-          2: "#0c1528",
-          3: "#111d34",
+          DEFAULT: "#0A1628",
+          2: "#0d1c35",
+          3: "#122040",
         },
         "text-primary": {
           DEFAULT: "#f5f0e8",
@@ -21,12 +21,12 @@ const config: Config = {
           3: "#4e5f82",
         },
         gold: {
-          DEFAULT: "#f0a832",
-          2: "#f7c060",
-          3: "#c07d10",
+          DEFAULT: "#D4AF37",
+          2: "#e8c93e",
+          3: "#a88a20",
         },
         accent: {
-          cyan: "#2dd4ff",
+          cyan: "#00BCD4",
           green: "#22d98a",
         },
         border: {
