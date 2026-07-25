@@ -10,10 +10,10 @@ html {
   width: 3px;
 }
 ::-webkit-scrollbar-track {
-  background: #070e1f;
+  background: #0A1628;
 }
 ::-webkit-scrollbar-thumb {
-  background: #f0a832;
+  background: #D4AF37;
   border-radius: 2px;
 }
 
@@ -26,8 +26,8 @@ html {
 
 /* Selection */
 ::selection {
-  background: #f0a832;
-  color: #070e1f;
+  background: #D4AF37;
+  color: #0A1628;
 }
 
 /* Line clamp utility */
