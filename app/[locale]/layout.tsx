@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
 import BackToTop from "@/components/BackToTop";
+import LenisProvider from "@/components/LenisProvider";
 
 export default async function LocaleLayout({
   children,
@@ -17,11 +18,13 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <CustomCursor />
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
-      <BackToTop />
+      <LenisProvider>
+        <CustomCursor />
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
+        <BackToTop />
+      </LenisProvider>
     </NextIntlClientProvider>
   );
 }

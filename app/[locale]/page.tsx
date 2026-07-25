@@ -1,29 +1,19 @@
-import Hero from "@/components/sections/Hero";
+import HeroSection from "@/components/sections/HeroSection";
 import Ticker from "@/components/sections/Ticker";
-import About from "@/components/sections/About";
-import AISystem from "@/components/sections/AISystem";
-import Skills from "@/components/sections/Skills";
+import StatsSection from "@/components/sections/StatsSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
-import Projects from "@/components/sections/Projects";
-import Experience from "@/components/sections/Experience";
-import Languages from "@/components/sections/Languages";
-import GitHubStats from "@/components/sections/GitHubStats";
-import Contact from "@/components/sections/Contact";
+import ContactSection from "@/components/sections/ContactSection";
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
+      <HeroSection />
       <Ticker />
-      <About />
-      <AISystem />
-      <Skills />
+      <StatsSection />
+      <ProjectsSection />
       <SkillsSection />
-      <Projects />
-      <Experience />
-      <Languages />
-      <GitHubStats />
-      <Contact />
+      <ContactSection />
     </>
   );
 }
