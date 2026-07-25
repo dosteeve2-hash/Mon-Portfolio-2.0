@@ -10,10 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        navy: "#0A1628",
         bg: {
           DEFAULT: "#0A1628",
-          2: "#0d1c35",
-          3: "#122040",
+          2: "#0e1f3d",
+          3: "#142b52",
         },
         "text-primary": {
           DEFAULT: "#f5f0e8",
@@ -22,8 +23,8 @@ const config: Config = {
         },
         gold: {
           DEFAULT: "#D4AF37",
-          2: "#e8c93e",
-          3: "#a88a20",
+          2: "#F5D67A",
+          3: "#b8962e",
         },
         accent: {
           cyan: "#00BCD4",
