@@ -113,5 +113,69 @@
     "status": "dev",
     "featured": false,
     "color": "#ff6b35"
+  },
+  {
+    "id": 10,
+    "title": "SUGU",
+    "description": "B2B POS application for African merchants — mobile-first cash register, multi-store, 4 languages (FR/EN/Dioula/Mooré).",
+    "descFr": "Application de caisse B2B pour commerçants africains — POS mobile-first, multi-boutique, 4 langues (FR/EN/Dioula/Mooré).",
+    "descTr": "Afrika'lı tüccarlar için B2B POS uygulaması — mobil öncelikli kasa, çok mağazalı, 4 dil (FR/EN/Dioula/Mooré).",
+    "stack": ["React", "TypeScript", "PWA", "Supabase"],
+    "live": "https://id-preview--e8497ab6-3725-467f-bbeb-2ed1ab1fc82a.lovable.app/",
+    "status": "prototype",
+    "featured": true,
+    "color": "#D4AF37"
+  },
+  {
+    "id": 11,
+    "title": "FORJA",
+    "description": "SaaS platform connecting Burkinabè coffee to world markets — lot tracking, buyers, export contracts, customs docs.",
+    "descFr": "Plateforme SaaS qui connecte le café burkinabè aux marchés mondiaux — de la parcelle au conteneur.",
+    "descTr": "Burkina Faso kahvesini dünya pazarlarına bağlayan SaaS platformu — parselden konteynere.",
+    "stack": ["Next.js", "TypeScript", "Supabase", "Tailwind"],
+    "live": "https://forja.vercel.app",
+    "github": "https://github.com/dosteeve2-hash/forja",
+    "status": "production",
+    "featured": true,
+    "color": "#D4AF37"
+  },
+  {
+    "id": 12,
+    "title": "MillTrack",
+    "description": "Real-time production tracking for African processing plants — mills, oil presses, ECOWAS zone.",
+    "descFr": "Suivi de production en temps réel pour usines de transformation africaines — minoteries, huileries, CEDEAO.",
+    "descTr": "Afrika'nın işleme tesisleri için gerçek zamanlı üretim takibi — değirmenler, yağ presleri, ECOWAS bölgesi.",
+    "stack": ["Next.js", "TypeScript", "Supabase", "Recharts"],
+    "live": "https://milltrack.vercel.app",
+    "github": "https://github.com/dosteeve2-hash/milltrack",
+    "status": "dev",
+    "featured": false,
+    "color": "#00BCD4"
+  },
+  {
+    "id": 13,
+    "title": "AgroTrack BF",
+    "description": "Offline-first cooperative management for Burkinabè farmers — members, harvests, payments, auto-sync.",
+    "descFr": "Gestion de coopératives agricoles offline-first — membres, collectes, paiements, sync automatique.",
+    "descTr": "Burkina Faso çiftçileri için çevrimdışı öncelikli kooperatif yönetimi — üyeler, hasatlar, ödemeler, otomatik senkronizasyon.",
+    "stack": ["Next.js", "TypeScript", "PWA", "Supabase"],
+    "live": "https://agrotrack-bf.vercel.app",
+    "github": "https://github.com/dosteeve2-hash/agrotrack-bf",
+    "status": "dev",
+    "featured": false,
+    "color": "#22c55e"
+  },
+  {
+    "id": 14,
+    "title": "ValueChain Connect",
+    "description": "B2B marketplace connecting producers and processors in West Africa — direct sourcing, eliminating middlemen.",
+    "descFr": "Marketplace B2B connectant producteurs et transformateurs en Afrique de l'Ouest — sourcing direct, sans intermédiaires.",
+    "descTr": "Batı Afrika'da üreticileri ve işlemcileri birbirine bağlayan B2B pazaryeri — aracısız direkt tedarik.",
+    "stack": ["Next.js", "TypeScript", "Supabase", "Framer Motion"],
+    "live": "https://valuechain-connect.vercel.app",
+    "github": "https://github.com/dosteeve2-hash/valuechain-connect",
+    "status": "dev",
+    "featured": false,
+    "color": "#ff6b35"
   }
 ]
