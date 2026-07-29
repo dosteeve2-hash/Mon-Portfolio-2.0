@@ -17,7 +17,7 @@ function FloatingBadge() {
     <motion.div
       animate={{ y: [0, -10, 0] }}
       transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute -bottom-5 -right-5 flex items-center gap-2.5 px-4 py-2.5 rounded-2xl border border-[#D4AF37]/30 bg-[#0d1c35] shadow-2xl backdrop-blur-sm"
+      className="absolute bottom-2 -right-6 flex items-center gap-2.5 px-4 py-2.5 rounded-2xl border border-[#D4AF37]/30 bg-[#0d1c35] shadow-2xl backdrop-blur-sm"
     >
       <span className="relative flex h-2.5 w-2.5">
         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22d98a] opacity-75" />
@@ -152,18 +152,17 @@ export default function HeroSection() {
           transition={{ duration: 0.9, delay: 0.4 }}
           className="hidden md:flex items-center justify-center"
         >
-          <div className="relative w-72 lg:w-80">
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#D4AF37]/20 to-[#00BCD4]/15 blur-2xl" />
-            <div className="relative rounded-2xl overflow-hidden border border-[#1f3054]" style={{ aspectRatio: "4/5" }}>
+          <div className="relative w-72 lg:w-80 aspect-square">
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#D4AF37]/25 to-[#00BCD4]/20 blur-2xl" />
+            <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-[#D4AF37] shadow-2xl shadow-[#D4AF37]/25">
               <Image
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format&fit=crop&q=80"
+                src="/steve-photo.jpg"
                 alt="Steeve Donald Compaore — Developer"
-                width={480}
-                height={600}
-                className="w-full h-full object-cover object-top"
+                fill
+                sizes="(min-width: 1024px) 320px, 288px"
+                className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/50 to-transparent" />
             </div>
             <FloatingBadge />
           </div>

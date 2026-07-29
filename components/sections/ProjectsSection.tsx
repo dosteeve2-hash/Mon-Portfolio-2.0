@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import GlowButton from "@/components/GlowButton";
 import ScrollReveal from "@/components/ScrollReveal";
+import ProjectLogo from "@/components/ProjectLogo";
 import projectsData from "@/data/projects.json";
 
 interface Project {
@@ -59,6 +60,11 @@ function ProjectCard({ project }: { project: Project }) {
             {project.title.slice(0, 2)}
           </span>
         </div>
+        <ProjectLogo
+          id={project.id}
+          color={project.color}
+          className="absolute top-4 left-4 shadow-lg rounded-[10px]"
+        />
         <div
           className="absolute bottom-4 left-4 right-4 h-1 rounded-full"
           style={{ backgroundColor: project.color, opacity: 0.8 }}

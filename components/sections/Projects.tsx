@@ -5,6 +5,7 @@ import { motion, useInView, useMotionValue, useTransform, useSpring } from "fram
 import { useTranslations, useLocale } from "next-intl";
 import { ExternalLink } from "lucide-react";
 import projectsData from "@/data/projects.json";
+import ProjectLogo from "@/components/ProjectLogo";
 
 const GithubIcon = () => (
   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
@@ -106,10 +107,13 @@ function TiltCard({ project, index }: { project: Project; index: number }) {
         {/* Status badge */}
         <StatusBadge status={project.status} />
 
-        {/* Title */}
-        <h3 className="font-playfair text-xl font-bold italic text-text-primary mb-3 group-hover:text-[#00b4d8] transition-colors duration-300">
-          {project.title}
-        </h3>
+        {/* Logo + Title */}
+        <div className="flex items-center gap-3 mb-3">
+          <ProjectLogo id={project.id} color={project.color} />
+          <h3 className="font-playfair text-xl font-bold italic text-text-primary group-hover:text-[#00b4d8] transition-colors duration-300">
+            {project.title}
+          </h3>
+        </div>
 
         {/* Description */}
         <p className="font-outfit text-sm text-text-primary-2 leading-relaxed mb-5 line-clamp-3">
