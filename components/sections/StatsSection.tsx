@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useInView } from "framer-motion";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import ScrollReveal from "@/components/ScrollReveal";
+import projectsData from "@/data/projects.json";
 
 interface Stat {
   target: number;
@@ -12,8 +13,10 @@ interface Stat {
   color: string;
 }
 
+const shippedCount = projectsData.filter((p) => p.status === "production").length;
+
 const STATS: Stat[] = [
-  { target: 5, suffix: "+", label: "Projets livrés", color: "#D4AF37" },
+  { target: shippedCount, suffix: "+", label: "Projets livrés", color: "#D4AF37" },
   { target: 3, suffix: "+", label: "Ans d'expérience", color: "#00BCD4" },
   { target: 4, suffix: "", label: "Startups accompagnées", color: "#D4AF37" },
   { target: 100, suffix: "%", label: "Builds passing", color: "#22d98a" },

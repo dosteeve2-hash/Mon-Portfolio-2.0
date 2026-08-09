@@ -177,5 +177,17 @@
     "status": "dev",
     "featured": false,
     "color": "#ff6b35"
+  },
+  {
+    "id": 15,
+    "title": "LivestockOS",
+    "description": "Herd management system for Sahelian breeders — animal registry, health & vaccination records, feed planning, production, stock, sales and financial tracking with PDF reports.",
+    "descFr": "Système de gestion de troupeau pour éleveurs sahéliens — registre animaux, suivi sanitaire & vaccinations, plan d'alimentation, production, stocks, ventes et transactions financières avec rapports PDF.",
+    "descTr": "Sahel bölgesi yetiştiricileri için sürü yönetim sistemi — hayvan kaydı, sağlık ve aşı takibi, yem planlaması, üretim, stok, satış ve PDF raporlu finansal takip.",
+    "stack": ["Next.js", "TypeScript", "Framer Motion", "Recharts", "jsPDF", "Vitest"],
+    "github": "https://github.com/dosteeve2-hash/livestockos",
+    "status": "dev",
+    "featured": false,
+    "color": "#22c55e"
   }
 ]

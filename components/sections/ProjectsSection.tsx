@@ -16,16 +16,13 @@ interface Project {
   live?: string;
   github: string;
   status: "production" | "dev";
+  featured: boolean;
   color: string;
 }
 
-const FEATURED_IDS = [4, 6, 5, 2, 7, 3];
 const AUTO_PLAY_MS = 5000;
 
-const allProjects = projectsData as Project[];
-const projects = FEATURED_IDS.map((id) =>
-  allProjects.find((p) => p.id === id)
-).filter(Boolean) as Project[];
+const projects = (projectsData as Project[]).filter((p) => p.featured);
 
 function StatusDot({ status }: { status: "production" | "dev" }) {
   const color = status === "production" ? "#22d98a" : "#D4AF37";
