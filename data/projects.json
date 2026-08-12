@@ -105,14 +105,15 @@
   {
     "id": 9,
     "title": "Forge Afrika",
-    "description": "Digital innovation hub platform connecting African developers, makers and entrepreneurs to build, share and fund tech projects.",
-    "descFr": "Plateforme de hub d'innovation numérique connectant développeurs, makers et entrepreneurs africains pour construire, partager et financer des projets tech.",
-    "descTr": "Afrika'lı geliştiricileri, yapımcıları ve girişimcileri teknoloji projeleri inşa etmek, paylaşmak ve finanse etmek için birleştiren dijital inovasyon merkezi platformu.",
-    "stack": ["Next.js", "TypeScript", "Tailwind", "Supabase"],
+    "description": "Parent company HQ of a pan-African tech group — governance, consolidated KPIs and shared infrastructure across 11 operating subsidiaries.",
+    "descFr": "Quartier général de l'entreprise mère d'un groupe tech panafricain — gouvernance, KPIs consolidés et infrastructure partagée pour 11 filiales opérationnelles.",
+    "descTr": "Pan-Afrika teknoloji grubunun ana şirket merkezi — 11 operasyonel yan kuruluş için yönetişim, konsolide KPI ve paylaşılan altyapı.",
+    "stack": ["Next.js 16", "TypeScript", "Supabase", "Tailwind", "Framer Motion", "Recharts"],
     "github": "https://github.com/dosteeve2-hash/forge-afrika",
     "status": "dev",
-    "featured": false,
-    "color": "#ff6b35"
+    "featured": true,
+    "color": "#ff6b35",
+    "live": "https://forge-afrika.vercel.app"
   },
   {
     "id": 10,
@@ -189,5 +190,18 @@
     "status": "dev",
     "featured": false,
     "color": "#22c55e"
+  },
+  {
+    "id": 16,
+    "title": "Indubot Afrika",
+    "description": "Automated industrial management for African factories — real-time production tracking, machine monitoring, predictive alerts and automatic reports.",
+    "descFr": "Gestion automatique d'industries pour usines africaines — suivi de production temps réel, monitoring machines, alertes prédictives et rapports automatiques.",
+    "descTr": "Afrika fabrikaları için otomatik endüstriyel yönetim — gerçek zamanlı üretim takibi, makine izleme, öngörücü uyarılar ve otomatik raporlar.",
+    "stack": ["Next.js 16", "TypeScript", "Better Auth", "Tailwind", "Motion", "visx"],
+    "live": "https://indubot-afrika.vercel.app",
+    "github": "https://github.com/dosteeve2-hash/indubot-afrika",
+    "status": "dev",
+    "featured": false,
+    "color": "#00BCD4"
   }
 ]
