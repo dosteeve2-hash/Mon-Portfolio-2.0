@@ -201,7 +201,7 @@
     "live": "https://indubot-afrika.vercel.app",
     "github": "https://github.com/dosteeve2-hash/indubot-afrika",
     "status": "dev",
-    "featured": false,
+    "featured": true,
     "color": "#00BCD4"
   }
 ]
