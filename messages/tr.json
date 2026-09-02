@@ -62,6 +62,7 @@
     "statusDev": "Geliştiriliyor",
     "demo": "Canlı demo",
     "code": "Kaynak kod",
+    "sourcePrivate": "Talep üzerine kod",
     "prev": "Önceki proje",
     "next": "Sonraki proje",
     "goTo": "{n}. projeye git",
