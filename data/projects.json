@@ -5,9 +5,17 @@
     "description": "Industrial ERP for African transformation SMEs — lot-to-lot traceability, stock & supplier management, ISO/Fairtrade certifications, exportable PDF reports.",
     "descFr": "ERP industriel B2B pour PMEs africaines de transformation — traçabilité lot-à-lot, gestion stocks & fournisseurs, certifications ISO/Fairtrade, rapports PDF exportables.",
     "descTr": "Afrika'nın dönüşüm KOBİ'leri için endüstriyel ERP — lot bazlı izlenebilirlik, stok & tedarikçi yönetimi, ISO/Fairtrade sertifikaları, PDF raporları.",
-    "stack": ["Next.js 16", "Supabase", "TypeScript", "Tailwind v4", "GSAP", "Recharts"],
+    "stack": [
+      "Next.js 16",
+      "Supabase",
+      "TypeScript",
+      "Tailwind v4",
+      "GSAP",
+      "Recharts"
+    ],
     "live": "https://taama.vercel.app",
     "github": "https://github.com/dosteeve2-hash/taama",
+    "sourcePublic": false,
     "status": "production",
     "featured": true,
     "color": "#f0a832"
@@ -18,9 +26,16 @@
     "description": "B2B cloud accounting for African SMEs — invoicing, expense tracking, cash flow forecasting, SYSCOHADA-compliant reports in FCFA.",
     "descFr": "Comptabilité B2B cloud pour PMEs africaines — factures, suivi dépenses, prévisions trésorerie, rapports SYSCOHADA en FCFA.",
     "descTr": "Afrika KOBİ'leri için B2B bulut muhasebesi — faturalama, gider takibi, nakit akışı tahmini, FCFA cinsinden SYSCOHADA uyumlu raporlar.",
-    "stack": ["Next.js 15", "Supabase", "TypeScript", "Recharts", "Framer Motion"],
+    "stack": [
+      "Next.js 15",
+      "Supabase",
+      "TypeScript",
+      "Recharts",
+      "Framer Motion"
+    ],
     "live": "https://comptrack.vercel.app",
     "github": "https://github.com/dosteeve2-hash/comptrack",
+    "sourcePublic": false,
     "status": "production",
     "featured": true,
     "color": "#22c55e"
@@ -31,9 +46,15 @@
     "description": "Full-stack community platform for West African students in Turkey — members, events, news feed, treasury management.",
     "descFr": "Plateforme communautaire full-stack pour étudiants ouest-africains en Turquie — membres, événements, feed, gestion caisse.",
     "descTr": "Türkiye'deki Batı Afrikalı öğrenciler için full-stack topluluk platformu — üyeler, etkinlikler, feed, kasa yönetimi.",
-    "stack": ["Next.js", "Supabase", "TypeScript", "Tailwind"],
+    "stack": [
+      "Next.js",
+      "Supabase",
+      "TypeScript",
+      "Tailwind"
+    ],
     "live": "https://ueemt-tokat.vercel.app",
     "github": "https://github.com/dosteeve2-hash/ueemt-tokat",
+    "sourcePublic": false,
     "status": "production",
     "featured": true,
     "color": "#22d98a"
@@ -44,9 +65,17 @@
     "description": "African lifestyle marketplace — authentic artisan products, fashion, natural cosmetics and local food, with seller profiles and real-time order tracking.",
     "descFr": "Marketplace e-commerce de produits africains authentiques — artisanat, mode, cosmétiques naturels, alimentation locale, profils vendeurs et suivi commandes temps réel.",
     "descTr": "Afrika yaşam tarzı pazaryeri — otantik el sanatları, moda, doğal kozmetik ve yerel gıda ürünleri, satıcı profilleri ve gerçek zamanlı sipariş takibi.",
-    "stack": ["Next.js 16", "Supabase", "TypeScript", "Tailwind v4", "GSAP", "Zod"],
+    "stack": [
+      "Next.js 16",
+      "Supabase",
+      "TypeScript",
+      "Tailwind v4",
+      "GSAP",
+      "Zod"
+    ],
     "live": "https://mifa-life-shop-9k55.vercel.app",
     "github": "https://github.com/dosteeve2-hash/Mifa_Life_shop",
+    "sourcePublic": false,
     "status": "production",
     "featured": true,
     "color": "#2dd4ff"
@@ -57,9 +86,15 @@
     "description": "Local AI agent system combining Ollama and Claude for African context-aware automation.",
     "descFr": "Système agent IA local combinant Ollama et Claude pour une automatisation adaptée au contexte africain.",
     "descTr": "Afrika bağlamına uygun otomasyon için Ollama ve Claude'u birleştiren yerel AI ajan sistemi.",
-    "stack": ["TypeScript", "AI/LLM", "Ollama", "Claude"],
+    "stack": [
+      "TypeScript",
+      "AI/LLM",
+      "Ollama",
+      "Claude"
+    ],
     "live": "https://african-hybrid-agent.vercel.app",
     "github": "https://github.com/dosteeve2-hash/african-hybrid-agent",
+    "sourcePublic": true,
     "status": "dev",
     "featured": true,
     "color": "#f7c060"
@@ -70,9 +105,15 @@
     "description": "AI-powered platform that transforms African problems and ideas into actionable tech projects using Claude.",
     "descFr": "Plateforme IA qui transforme les problèmes africains en projets tech concrets grâce à Claude.",
     "descTr": "Claude kullanarak Afrika sorunlarını ve fikirlerini uygulanabilir teknoloji projelerine dönüştüren AI platformu.",
-    "stack": ["TypeScript", "Next.js", "Claude API", "Supabase"],
+    "stack": [
+      "TypeScript",
+      "Next.js",
+      "Claude API",
+      "Supabase"
+    ],
     "live": "https://problem-to-project-africa.vercel.app",
     "github": "https://github.com/dosteeve2-hash/Problem-to-Projects-Africa",
+    "sourcePublic": false,
     "status": "production",
     "featured": true,
     "color": "#22d98a"
@@ -83,9 +124,14 @@
     "description": "Premium 3D phone showcase with cinematic scroll animations and glassmorphism UI.",
     "descFr": "Vitrine téléphone 3D premium avec animations de scroll cinématiques et UI glassmorphism.",
     "descTr": "Sinematik kaydırma animasyonları ve glassmorphism UI ile premium 3D telefon vitrini.",
-    "stack": ["Next.js", "Framer Motion", "Tailwind v4"],
+    "stack": [
+      "Next.js",
+      "Framer Motion",
+      "Tailwind v4"
+    ],
     "live": "https://phone-showcase-nu.vercel.app",
     "github": "https://github.com/dosteeve2-hash/phone-showcase",
+    "sourcePublic": true,
     "status": "production",
     "featured": false,
     "color": "#f0a832"
@@ -96,8 +142,12 @@
     "description": "Data collection and aggregation platform designed for the Burkinabè digital ecosystem.",
     "descFr": "Plateforme de collecte et d'agrégation de données conçue pour l'écosystème numérique burkinabè.",
     "descTr": "Burkinabè dijital ekosistemi için tasarlanmış veri toplama ve birleştirme platformu.",
-    "stack": ["TypeScript", "Next.js"],
+    "stack": [
+      "TypeScript",
+      "Next.js"
+    ],
     "github": "https://github.com/dosteeve2-hash/burkinacollect",
+    "sourcePublic": true,
     "status": "dev",
     "featured": false,
     "color": "#9ba8c4"
@@ -108,8 +158,16 @@
     "description": "Parent company HQ of a pan-African tech group — governance, consolidated KPIs and shared infrastructure across 11 operating subsidiaries.",
     "descFr": "Quartier général de l'entreprise mère d'un groupe tech panafricain — gouvernance, KPIs consolidés et infrastructure partagée pour 11 filiales opérationnelles.",
     "descTr": "Pan-Afrika teknoloji grubunun ana şirket merkezi — 11 operasyonel yan kuruluş için yönetişim, konsolide KPI ve paylaşılan altyapı.",
-    "stack": ["Next.js 16", "TypeScript", "Supabase", "Tailwind", "Framer Motion", "Recharts"],
+    "stack": [
+      "Next.js 16",
+      "TypeScript",
+      "Supabase",
+      "Tailwind",
+      "Framer Motion",
+      "Recharts"
+    ],
     "github": "https://github.com/dosteeve2-hash/forge-afrika",
+    "sourcePublic": false,
     "status": "dev",
     "featured": true,
     "color": "#ff6b35",
@@ -121,8 +179,15 @@
     "description": "Offline-first POS for African informal merchants — sales, purchases, credit tracking, Mobile Money payments, 4 languages (FR/EN/Dioula/Mooré).",
     "descFr": "POS offline-first pour commerçants africains du secteur informel — ventes, achats, suivi crédits, paiements Mobile Money, 4 langues (FR/EN/Dioula/Mooré).",
     "descTr": "Afrika'nın gayri resmi ticaret esnafı için çevrimdışı öncelikli POS — satışlar, alımlar, kredi takibi, Mobile Money ödemeleri, 4 dil (FR/EN/Dioula/Mooré).",
-    "stack": ["Next.js 15", "TypeScript", "Tailwind v4", "localStorage", "Recharts"],
+    "stack": [
+      "Next.js 15",
+      "TypeScript",
+      "Tailwind v4",
+      "localStorage",
+      "Recharts"
+    ],
     "github": "https://github.com/dosteeve2-hash/duka-boutique",
+    "sourcePublic": false,
     "status": "production",
     "featured": true,
     "color": "#D4AF37"
@@ -133,9 +198,16 @@
     "description": "SaaS export management for Burkinabè coffee & cocoa — lot tracking, international buyer CRM, auto-generated customs docs, multi-currency P&L.",
     "descFr": "SaaS gestion export café/cacao burkinabè — suivi lots, CRM acheteurs internationaux, documents douaniers auto-générés, P&L multidevises.",
     "descTr": "Burkina Faso kahve ve kakaosu için SaaS ihracat yönetimi — lot takibi, uluslararası alıcı CRM'i, otomatik gümrük belgeleri, çok para birimli P&L.",
-    "stack": ["Next.js 16", "Supabase", "TypeScript", "Tailwind v4", "GSAP"],
+    "stack": [
+      "Next.js 16",
+      "Supabase",
+      "TypeScript",
+      "Tailwind v4",
+      "GSAP"
+    ],
     "live": "https://forja.vercel.app",
     "github": "https://github.com/dosteeve2-hash/forja",
+    "sourcePublic": false,
     "status": "production",
     "featured": true,
     "color": "#D4AF37"
@@ -146,9 +218,16 @@
     "description": "Real-time production tracking for African mills and oil presses — lot-to-lot traceability, yield analytics, preventive maintenance scheduling.",
     "descFr": "Suivi production temps réel pour minoteries et huileries africaines — traçabilité lot-à-lot, analytics rendements, planification maintenance préventive.",
     "descTr": "Afrika değirmenleri ve yağ presleri için gerçek zamanlı üretim takibi — lot bazlı izlenebilirlik, verim analitiği, önleyici bakım planlaması.",
-    "stack": ["Next.js 16", "Supabase", "TypeScript", "Recharts", "shadcn/ui"],
+    "stack": [
+      "Next.js 16",
+      "Supabase",
+      "TypeScript",
+      "Recharts",
+      "shadcn/ui"
+    ],
     "live": "https://milltrack.vercel.app",
     "github": "https://github.com/dosteeve2-hash/milltrack",
+    "sourcePublic": false,
     "status": "dev",
     "featured": false,
     "color": "#00BCD4"
@@ -159,9 +238,17 @@
     "description": "Offline-first PWA for Burkinabè agricultural cooperatives — member registry, harvest weighing, producer payments, auto-sync on reconnection.",
     "descFr": "PWA offline-first pour coopératives agricoles burkinabèses — registre membres & parcelles, pesées récoltes, paiements producteurs, sync automatique au retour réseau.",
     "descTr": "Burkina Faso tarım kooperatifleri için çevrimdışı öncelikli PWA — üye kaydı ve parsel takibi, hasat tartımı, üretici ödemeleri, bağlantı gelince otomatik senkronizasyon.",
-    "stack": ["Next.js 16", "Supabase", "TypeScript", "PWA", "jsPDF", "Recharts"],
+    "stack": [
+      "Next.js 16",
+      "Supabase",
+      "TypeScript",
+      "PWA",
+      "jsPDF",
+      "Recharts"
+    ],
     "live": "https://agrotrack-bf.vercel.app",
     "github": "https://github.com/dosteeve2-hash/agrotrack-bf",
+    "sourcePublic": false,
     "status": "dev",
     "featured": false,
     "color": "#22c55e"
@@ -172,9 +259,17 @@
     "description": "B2B marketplace for ECOWAS — direct sourcing between cooperatives, processors and exporters for cotton, sesame, shea butter, eliminating middlemen.",
     "descFr": "Marketplace B2B CEDEAO — sourcing direct entre coopératives, transformateurs et exportateurs pour coton, sésame, karité, sans intermédiaires.",
     "descTr": "ECOWAS B2B pazaryeri — kooperatifler, işlemciler ve ihracatçılar arasında pamuk, susam, shea yağı için aracısız direkt tedarik.",
-    "stack": ["Next.js 15", "Supabase", "TypeScript", "Radix UI", "Recharts", "Framer Motion"],
+    "stack": [
+      "Next.js 15",
+      "Supabase",
+      "TypeScript",
+      "Radix UI",
+      "Recharts",
+      "Framer Motion"
+    ],
     "live": "https://valuechain-connect.vercel.app",
     "github": "https://github.com/dosteeve2-hash/valuechain-connect",
+    "sourcePublic": false,
     "status": "dev",
     "featured": false,
     "color": "#ff6b35"
@@ -185,8 +280,16 @@
     "description": "Herd management system for Sahelian breeders — animal registry, health & vaccination records, feed planning, production, stock, sales and financial tracking with PDF reports.",
     "descFr": "Système de gestion de troupeau pour éleveurs sahéliens — registre animaux, suivi sanitaire & vaccinations, plan d'alimentation, production, stocks, ventes et transactions financières avec rapports PDF.",
     "descTr": "Sahel bölgesi yetiştiricileri için sürü yönetim sistemi — hayvan kaydı, sağlık ve aşı takibi, yem planlaması, üretim, stok, satış ve PDF raporlu finansal takip.",
-    "stack": ["Next.js", "TypeScript", "Framer Motion", "Recharts", "jsPDF", "Vitest"],
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Framer Motion",
+      "Recharts",
+      "jsPDF",
+      "Vitest"
+    ],
     "github": "https://github.com/dosteeve2-hash/livestockos",
+    "sourcePublic": true,
     "status": "dev",
     "featured": false,
     "color": "#22c55e"
@@ -197,9 +300,17 @@
     "description": "Automated industrial management for African factories — real-time production tracking, machine monitoring, predictive alerts and automatic reports.",
     "descFr": "Gestion automatique d'industries pour usines africaines — suivi de production temps réel, monitoring machines, alertes prédictives et rapports automatiques.",
     "descTr": "Afrika fabrikaları için otomatik endüstriyel yönetim — gerçek zamanlı üretim takibi, makine izleme, öngörücü uyarılar ve otomatik raporlar.",
-    "stack": ["Next.js 16", "TypeScript", "Better Auth", "Tailwind", "Motion", "visx"],
+    "stack": [
+      "Next.js 16",
+      "TypeScript",
+      "Better Auth",
+      "Tailwind",
+      "Motion",
+      "visx"
+    ],
     "live": "https://indubot-afrika.vercel.app",
     "github": "https://github.com/dosteeve2-hash/indubot-afrika",
+    "sourcePublic": false,
     "status": "dev",
     "featured": true,
     "color": "#00BCD4"

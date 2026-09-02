@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:messages": "node scripts/check-messages.mjs",
+    "check:links": "node scripts/check-project-links.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

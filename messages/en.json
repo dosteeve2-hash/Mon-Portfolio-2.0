@@ -62,6 +62,7 @@
     "statusDev": "In development",
     "demo": "Live demo",
     "code": "Source",
+    "sourcePrivate": "Code on request",
     "prev": "Previous project",
     "next": "Next project",
     "goTo": "Go to project {n}",

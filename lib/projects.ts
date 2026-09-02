@@ -12,6 +12,9 @@ export interface Project {
   stack: string[];
   live?: string;
   github: string;
+  /** Le dépôt est-il accessible publiquement ? 12 des 16 sont privés :
+   *  afficher un lien « Code source » vers un dépôt privé renvoie un 404. */
+  sourcePublic: boolean;
   status: ProjectStatus;
   featured: boolean;
   color: string;

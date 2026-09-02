@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
-import { ChevronLeft, ChevronRight, ExternalLink, Pause, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight, ExternalLink, Lock, Pause, Play } from "lucide-react";
 import GlowButton from "@/components/GlowButton";
 import ProjectLogo from "@/components/ProjectLogo";
 import Reveal from "@/components/ui/Reveal";
@@ -102,14 +102,20 @@ function FeaturedCard({ project }: { project: Project }) {
               <ExternalLink size={14} /> {t("demo")}
             </GlowButton>
           )}
-          <GlowButton
-            href={project.github}
-            variant="outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <GithubIcon size={14} /> {t("code")}
-          </GlowButton>
+          {project.sourcePublic ? (
+            <GlowButton
+              href={project.github}
+              variant="outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GithubIcon size={14} /> {t("code")}
+            </GlowButton>
+          ) : (
+            <span className="inline-flex items-center gap-2 rounded-full border border-border-2 px-5 py-2 font-mono text-[11px] uppercase tracking-wider text-text-primary-3">
+              <Lock size={12} /> {t("sourcePrivate")}
+            </span>
+          )}
         </div>
       </div>
     </motion.article>
@@ -159,18 +165,26 @@ function ProjectTile({ project, index }: { project: Project; index: number }) {
               <ExternalLink size={12} /> {t("demo")}
             </a>
           ) : (
-            <span className="font-mono text-[11px] uppercase tracking-wider text-text-primary-3">
-              {t("noLive")}
+            project.sourcePublic && (
+              <span className="font-mono text-[11px] uppercase tracking-wider text-text-primary-3">
+                {t("noLive")}
+              </span>
+            )
+          )}
+          {project.sourcePublic ? (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-auto inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-text-primary-2 transition-colors hover:text-gold"
+            >
+              <GithubIcon size={12} /> {t("code")}
+            </a>
+          ) : (
+            <span className="ml-auto inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-text-primary-3">
+              <Lock size={11} /> {t("sourcePrivate")}
             </span>
           )}
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-auto inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-text-primary-2 transition-colors hover:text-gold"
-          >
-            <GithubIcon size={12} /> {t("code")}
-          </a>
         </div>
       </article>
     </Reveal>
