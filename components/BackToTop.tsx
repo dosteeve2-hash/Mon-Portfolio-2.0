@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 /**
  * BackToTop — bouton flottant animé avec Framer Motion.
@@ -11,6 +12,7 @@ import { ArrowUp } from "lucide-react";
  * Raccourci clavier : Alt + ArrowUp.
  */
 export default function BackToTop() {
+  const t = useTranslations("nav");
   const [visible, setVisible] = useState(false);
   const [progress, setProgress] = useState(0);
 
@@ -55,8 +57,8 @@ export default function BackToTop() {
         <motion.button
           key="back-to-top"
           onClick={scrollToTop}
-          aria-label="Retourner en haut (Alt + ↑)"
-          title="Retourner en haut (Alt + ↑)"
+          aria-label={`${t("home")} (Alt + ↑)`}
+          title={`${t("home")} (Alt + ↑)`}
           initial={{ opacity: 0, scale: 0.6, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.6, y: 20 }}
@@ -65,7 +67,7 @@ export default function BackToTop() {
           whileTap={{ scale: 0.92 }}
           className="fixed bottom-8 right-6 z-50 w-12 h-12 rounded-full
             flex items-center justify-center
-            bg-bg-2/80 backdrop-blur-md
+            bg-surface/90 backdrop-blur-md
             border border-border-2
             shadow-[0_4px_24px_rgba(0,0,0,0.35)]
             focus:outline-none focus:ring-2 focus:ring-gold/50"
@@ -82,7 +84,7 @@ export default function BackToTop() {
               cy="24"
               r={radius}
               fill="none"
-              stroke="var(--border-2, #2a2a3a)"
+              stroke="var(--c-border-2)"
               strokeWidth="2"
             />
             {/* Progression */}
@@ -91,7 +93,7 @@ export default function BackToTop() {
               cy="24"
               r={radius}
               fill="none"
-              stroke="#f0a832"
+              stroke="var(--c-gold)"
               strokeWidth="2"
               strokeLinecap="round"
               style={{
@@ -103,12 +105,7 @@ export default function BackToTop() {
           </svg>
 
           {/* Icône */}
-          <ArrowUp
-            size={18}
-            strokeWidth={2.5}
-            className="relative z-10 text-gold"
-            style={{ color: "#f0a832" }}
-          />
+          <ArrowUp size={18} strokeWidth={2.5} className="relative z-10 text-gold" />
         </motion.button>
       )}
     </AnimatePresence>

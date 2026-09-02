@@ -1,139 +1,111 @@
 {
   "nav": {
     "about": "Hakkımda",
-    "skills": "Beceriler",
+    "skills": "Yetenekler",
     "projects": "Projeler",
-    "ai": "AI Sistemi",
-    "contact": "İletişim"
+    "contact": "İletişim",
+    "themeToLight": "Açık temaya geç",
+    "themeToDark": "Koyu temaya geç",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "home": "Başa dön",
+    "language": "Dil"
   },
   "hero": {
     "greeting": "Merhaba, ben",
     "name": "Steeve Donald",
-    "lastName": "Compaore.",
-    "roles": ["Builder", "Ürün Tasarımcısı", "AI Mühendisi", "Girişimci"],
-    "stat1Label": "CS Öğrencisi",
-    "stat1Value": "3. Yıl",
-    "stat2Label": "Dil",
-    "stat2Value": "5+",
-    "stat3Label": "AI Araçları",
-    "stat3Value": "8+",
-    "cta1": "Projeleri Gör",
-    "cta2": "İletişime Geç",
-    "scroll": "Kaydır"
+    "lastName": "Compaore",
+    "roles": [
+      "Builder.",
+      "Yapay Zekâ Mühendisi.",
+      "Ürün Tasarımcısı.",
+      "Girişimci."
+    ],
+    "tagline": "Afrika için web ürünleri, yapay zekâ sistemleri ve endüstriyel yazılımlar geliştiriyorum — sunum değil, yayında.",
+    "available": "Projelere açığım",
+    "ctaProjects": "Projeleri gör",
+    "ctaContact": "İletişime geç",
+    "ctaCv": "CV",
+    "scroll": "Kaydır",
+    "photoAlt": "Steeve Donald Compaore portresi"
   },
   "about": {
     "sectionNum": "01",
-    "sectionTitle": "Hakkımda",
-    "bio1": "Türkiye'deki Tokat Gaziosmanpaşa Üniversitesi'nde 3. sınıf Bilgisayar Mühendisliği öğrencisiyim. Burkina Faso'nun başkenti Ouagadougou'dan geliyorum. Afrika genelinde gerçek sorunları çözen web uygulamaları, AI sistemleri ve dijital ürünler geliştiriyorum.",
-    "bio2": "Misyonum: Afrika'nın dünya standartlarında ilk teknoloji şirketini inşa eden neslin bir parçası olmak.",
-    "quote": "Sadece kod yazmıyorum. Gelecekler inşa ediyorum.",
+    "eyebrow": "Hakkımda",
+    "title": "Ouaga'dan Tokat'a",
+    "bio1": "Burkina Faso'nun Ouagadougou şehrinden geliyorum ve Tokat Gaziosmanpaşa Üniversitesi'nde bilgisayar mühendisliği 3. sınıf öğrencisiyim. Afrika'daki gerçek sorunları çözen web uygulamaları, yapay zekâ sistemleri ve dijital ürünler geliştiriyorum.",
+    "bio2": "Amacım, Afrika'nın dünya çapındaki ilk teknoloji unicorn'unu inşa eden nesnin parçası olmak — sıfırdan, tuğla tuğla.",
+    "quote": "Sadece kod yazmıyorum. Gelecek inşa ediyorum.",
     "locationLabel": "Konum",
     "locationValue": "Tokat, Türkiye",
-    "availLabel": "Müsaitlik",
-    "availValue": "Fırsatlara Açık",
+    "availLabel": "Uygunluk",
+    "availValue": "Fırsatlara açık",
     "langsLabel": "Diller",
     "langsValue": "FR · EN · TR · Bambara · Mooré",
-    "emailLabel": "E-posta",
-    "emailValue": "docompaore2@gmail.com"
+    "focusLabel": "Uzmanlık",
+    "focusValue": "Full-stack · Yapay zekâ · Siber güvenlik"
   },
-  "ai": {
+  "stats": {
+    "eyebrow": "Rakamlarla",
+    "title": "Gerçek etki",
+    "shipped": "Yayınlanan proje",
+    "experience": "Yıllık deneyim",
+    "startups": "Desteklenen girişim",
+    "builds": "Başarılı build"
+  },
+  "projects": {
     "sectionNum": "02",
-    "sectionTitle": "AI Ajan Sistemi",
-    "subtitle": "Claude'u merkezi beyin olarak kullanan, birden fazla ajanı yöneten yerel bir AI altyapısı.",
-    "hub": "Claude",
-    "hubSub": "Orkestratör",
-    "ollamaLabel": "Yerel Ollama"
+    "eyebrow": "Projeler",
+    "title": "Projeler",
+    "subtitle": "Gerçek ürünler. Gerçek etki.",
+    "statusProduction": "Yayında",
+    "statusDev": "Geliştiriliyor",
+    "demo": "Canlı demo",
+    "code": "Kaynak kod",
+    "prev": "Önceki proje",
+    "next": "Sonraki proje",
+    "goTo": "{n}. projeye git",
+    "pause": "Otomatik geçişi durdur",
+    "play": "Otomatik geçişi sürdür",
+    "allTitle": "Tüm koleksiyon",
+    "allSubtitle": "Öne çıkan ya da değil, her depo.",
+    "noLive": "Sadece depo"
   },
   "skills": {
     "sectionNum": "03",
-    "sectionTitle": "Beceriler",
-    "techTitle": "Teknik",
-    "digitalTitle": "Pazarlama & Dijital",
-    "tech": [
-      { "name": "Next.js", "level": 95 },
-      { "name": "TypeScript", "level": 85 },
-      { "name": "Python", "level": 80 },
-      { "name": "Tailwind CSS", "level": 90 },
-      { "name": "Framer Motion", "level": 85 },
-      { "name": "Supabase", "level": 75 },
-      { "name": "AI / LLM Entegrasyonu", "level": 88 }
-    ],
-    "digital": [
-      { "name": "Ürün Tasarımı", "level": 80 },
-      { "name": "UI/UX", "level": 85 },
-      { "name": "Marka Stratejisi", "level": 70 },
-      { "name": "SEO & Analitik", "level": 65 },
-      { "name": "Sosyal Medya", "level": 75 }
-    ]
-  },
-  "projects": {
-    "sectionNum": "04",
-    "sectionTitle": "Projeler",
-    "subtitle": "Gerçek ürünler. Gerçek etki.",
-    "liveLabel": "Canlı",
-    "demoBtn": "Demo",
-    "codeBtn": "Kod",
-    "statusProduction": "Üretimde",
-    "statusDev": "Geliştirmede"
-  },
-  "experience": {
-    "sectionNum": "05",
-    "sectionTitle": "Deneyim",
-    "items": [
-      {
-        "year": "2024–Günümüz",
-        "title": "Kurucu & Baş Geliştirici",
-        "company": "MIFA Life Shop",
-        "desc": "Next.js ve Supabase ile Afrika yaşam tarzı e-ticaret platformu geliştirme."
-      },
-      {
-        "year": "2024–Günümüz",
-        "title": "Kurucu & Mimar",
-        "company": "Problem to Project Africa",
-        "desc": "Afrika sorunlarını somut teknoloji projelerine dönüştüren AI destekli platform tasarlama."
-      },
-      {
-        "year": "2023–Günümüz",
-        "title": "CS Öğrencisi",
-        "company": "Tokat Gaziosmanpaşa Üniversitesi",
-        "desc": "3. sınıf Bilgisayar Mühendisliği — Yazılım Mühendisliği ve Siber Güvenlik uzmanlığı."
-      },
-      {
-        "year": "2023",
-        "title": "AI Sistem Geliştirici",
-        "company": "African Hybrid Agent",
-        "desc": "Ollama ve Claude kullanarak Afrika kullanım durumları için hibrit yerel AI ajan sistemi tasarlandı."
-      }
-    ]
-  },
-  "languages": {
-    "sectionNum": "06",
-    "sectionTitle": "Diller",
-    "items": [
-      { "lang": "Français", "level": "Anadil", "flag": "🇧🇫" },
-      { "lang": "English", "level": "Akıcı", "flag": "🇬🇧" },
-      { "lang": "Türkçe", "level": "Konuşma Düzeyinde", "flag": "🇹🇷" },
-      { "lang": "Bambara", "level": "Anadil", "flag": "🇲🇱" },
-      { "lang": "Mooré", "level": "Anadil", "flag": "🇧🇫" }
-    ]
+    "eyebrow": "Yetenekler",
+    "title": "Teknoloji yığınım",
+    "subtitle": "Her gün kullandığım teknolojiler ve araçlar.",
+    "frontend": "Frontend",
+    "backend": "Backend & Veri",
+    "ai": "Yapay zekâ & Otomasyon",
+    "tooling": "Tasarım & Araçlar",
+    "levelCore": "Uzmanlık",
+    "levelStrong": "Güçlü",
+    "levelWorking": "Yetkin"
   },
   "contact": {
-    "sectionNum": "07",
-    "sectionTitle": "Birlikte İnşa",
-    "subtitle": "Olağanüstü bir şeyler edelim.",
+    "sectionNum": "04",
+    "eyebrow": "İletişim",
+    "title": "Birlikte",
+    "titleAccent": "olağanüstü bir şey inşa edelim.",
+    "lead": "Bir proje, bir iş birliği, bir fırsat? Aklınızdakini anlatın.",
     "formName": "Adınız",
     "formEmail": "E-postanız",
     "formMessage": "Mesajınız",
-    "formBtn": "Gönder",
-    "or": "veya doğrudan ulaşın"
+    "formBtn": "Mesaj gönder",
+    "sending": "Gönderiliyor…",
+    "sent": "Mesaj göndermeye hazır",
+    "sentHint": "E-posta uygulamanız açılmış olmalı. Açılmadıysa bana doğrudan yazın.",
+    "or": "Ya da doğrudan ulaşın"
   },
   "contactPage": {
-    "title": "Birlikte Çalışalım",
-    "subtitle": "Bir proje, iş birliği fikri veya fırsat mı var? Dinliyorum.",
+    "title": "Birlikte çalışalım",
+    "subtitle": "Bir proje, bir iş birliği fikri, bir fırsat? Sizi dinliyorum.",
     "subjectLabel": "Konu",
     "subjectProject": "Proje",
-    "subjectCollab": "İş Birliği",
-    "subjectJob": "İstihdam",
+    "subjectCollab": "İş birliği",
+    "subjectJob": "İş",
     "subjectOther": "Diğer",
     "namePlaceholder": "Adınız",
     "emailPlaceholder": "E-postanız",
@@ -147,7 +119,9 @@
     "githubLabel": "GitHub"
   },
   "footer": {
-    "built": "Next.js & Framer Motion ile yapıldı",
-    "rights": "Tüm hakları saklıdır."
+    "built": "Next.js & Framer Motion ile geliştirildi",
+    "rights": "Tüm hakları saklıdır.",
+    "navTitle": "Gezinme",
+    "elsewhereTitle": "Diğer bağlantılar"
   }
 }
