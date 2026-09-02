@@ -3,142 +3,114 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
-    "ai": "AI System",
-    "contact": "Contact"
+    "contact": "Contact",
+    "themeToLight": "Switch to light theme",
+    "themeToDark": "Switch to dark theme",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "home": "Back to top",
+    "language": "Language"
   },
   "hero": {
     "greeting": "Hello, I'm",
     "name": "Steeve Donald",
-    "lastName": "Compaore.",
-    "roles": ["Builder", "Product Designer", "AI Engineer", "Entrepreneur"],
-    "stat1Label": "CS Student",
-    "stat1Value": "3rd Year",
-    "stat2Label": "Languages",
-    "stat2Value": "5+",
-    "stat3Label": "AI Tools",
-    "stat3Value": "8+",
-    "cta1": "View Projects",
-    "cta2": "Contact Me",
-    "scroll": "Scroll"
+    "lastName": "Compaore",
+    "roles": [
+      "Builder.",
+      "AI Engineer.",
+      "Product Designer.",
+      "Entrepreneur."
+    ],
+    "tagline": "I build web products, AI systems and industrial software for Africa — shipped, not slideware.",
+    "available": "Available for work",
+    "ctaProjects": "View Projects",
+    "ctaContact": "Contact Me",
+    "ctaCv": "Résumé",
+    "scroll": "Scroll",
+    "photoAlt": "Portrait of Steeve Donald Compaore"
   },
   "about": {
     "sectionNum": "01",
-    "sectionTitle": "About Me",
-    "bio1": "I'm a 3rd-year Computer Science student at Tokat Gaziosmanpaşa University in Turkey, originally from Ouagadougou, Burkina Faso. I build web applications, AI systems, and digital products that solve real problems across Africa.",
+    "eyebrow": "About",
+    "title": "Building from Ouaga to Tokat",
+    "bio1": "I'm a 3rd-year Computer Science student at Tokat Gaziosmanpaşa University in Turkey, originally from Ouagadougou, Burkina Faso. I build web applications, AI systems and digital products that solve real problems across Africa.",
     "bio2": "My mission is to be part of the generation that builds Africa's first world-class tech unicorn — starting from the ground up, brick by brick.",
     "quote": "I don't just code. I build futures.",
     "locationLabel": "Location",
-    "locationValue": "Tokat, Turkey",
+    "locationValue": "Tokat, Türkiye",
     "availLabel": "Availability",
-    "availValue": "Open to Opportunities",
+    "availValue": "Open to opportunities",
     "langsLabel": "Languages",
     "langsValue": "FR · EN · TR · Bambara · Mooré",
-    "emailLabel": "Email",
-    "emailValue": "docompaore2@gmail.com"
+    "focusLabel": "Focus",
+    "focusValue": "Full-stack · AI · Cybersecurity"
   },
-  "ai": {
+  "stats": {
+    "eyebrow": "By the numbers",
+    "title": "Real impact",
+    "shipped": "Projects shipped",
+    "experience": "Years building",
+    "startups": "Ventures supported",
+    "builds": "Builds passing"
+  },
+  "projects": {
     "sectionNum": "02",
-    "sectionTitle": "AI Agent System",
-    "subtitle": "A local AI infrastructure orchestrating multiple agents via Claude as the central brain.",
-    "hub": "Claude",
-    "hubSub": "Orchestrator",
-    "ollamaLabel": "Ollama Local"
+    "eyebrow": "Projects",
+    "title": "Projects",
+    "subtitle": "Real products. Real impact.",
+    "statusProduction": "In production",
+    "statusDev": "In development",
+    "demo": "Live demo",
+    "code": "Source",
+    "prev": "Previous project",
+    "next": "Next project",
+    "goTo": "Go to project {n}",
+    "pause": "Pause autoplay",
+    "play": "Resume autoplay",
+    "allTitle": "The full shelf",
+    "allSubtitle": "Every repository, featured or not.",
+    "noLive": "Repo only"
   },
   "skills": {
     "sectionNum": "03",
-    "sectionTitle": "Skills",
-    "techTitle": "Technical",
-    "digitalTitle": "Marketing & Digital",
-    "tech": [
-      { "name": "Next.js", "level": 95 },
-      { "name": "TypeScript", "level": 85 },
-      { "name": "Python", "level": 80 },
-      { "name": "Tailwind CSS", "level": 90 },
-      { "name": "Framer Motion", "level": 85 },
-      { "name": "Supabase", "level": 75 },
-      { "name": "AI / LLM Integration", "level": 88 }
-    ],
-    "digital": [
-      { "name": "Product Design", "level": 80 },
-      { "name": "UI/UX", "level": 85 },
-      { "name": "Brand Strategy", "level": 70 },
-      { "name": "SEO & Analytics", "level": 65 },
-      { "name": "Social Media", "level": 75 }
-    ]
-  },
-  "projects": {
-    "sectionNum": "04",
-    "sectionTitle": "Projects",
-    "subtitle": "Real products. Real impact.",
-    "liveLabel": "Live",
-    "demoBtn": "Demo",
-    "codeBtn": "Code",
-    "statusProduction": "In Production",
-    "statusDev": "In Development"
-  },
-  "experience": {
-    "sectionNum": "05",
-    "sectionTitle": "Experience",
-    "items": [
-      {
-        "year": "2024–Present",
-        "title": "Founder & Lead Developer",
-        "company": "MIFA Life Shop",
-        "desc": "Building an African lifestyle e-commerce platform with Next.js and Supabase."
-      },
-      {
-        "year": "2024–Present",
-        "title": "Founder & Architect",
-        "company": "Problem to Project Africa",
-        "desc": "Designing an AI-powered platform that transforms African problems into actionable tech projects."
-      },
-      {
-        "year": "2023–Present",
-        "title": "CS Student",
-        "company": "Tokat Gaziosmanpaşa University",
-        "desc": "3rd year Computer Science — specializing in Software Engineering and Cybersecurity."
-      },
-      {
-        "year": "2023",
-        "title": "AI Systems Builder",
-        "company": "African Hybrid Agent",
-        "desc": "Designed a local hybrid AI agent system for African use cases using Ollama and Claude."
-      }
-    ]
-  },
-  "languages": {
-    "sectionNum": "06",
-    "sectionTitle": "Languages",
-    "items": [
-      { "lang": "Français", "level": "Native", "flag": "🇧🇫" },
-      { "lang": "English", "level": "Fluent", "flag": "🇬🇧" },
-      { "lang": "Türkçe", "level": "Conversational", "flag": "🇹🇷" },
-      { "lang": "Bambara", "level": "Native", "flag": "🇲🇱" },
-      { "lang": "Mooré", "level": "Native", "flag": "🇧🇫" }
-    ]
+    "eyebrow": "Skills",
+    "title": "My stack",
+    "subtitle": "Technologies and tools I work with day to day.",
+    "frontend": "Frontend",
+    "backend": "Backend & Data",
+    "ai": "AI & Automation",
+    "tooling": "Design & Tooling",
+    "levelCore": "Core",
+    "levelStrong": "Strong",
+    "levelWorking": "Working"
   },
   "contact": {
-    "sectionNum": "07",
-    "sectionTitle": "Let's Build",
-    "subtitle": "Something extraordinary.",
-    "formName": "Your Name",
-    "formEmail": "Your Email",
-    "formMessage": "Your Message",
-    "formBtn": "Send Message",
-    "or": "or reach me directly"
+    "sectionNum": "04",
+    "eyebrow": "Contact",
+    "title": "Let's build",
+    "titleAccent": "something extraordinary.",
+    "lead": "A project, a collaboration, an opportunity? Tell me what you have in mind.",
+    "formName": "Your name",
+    "formEmail": "Your email",
+    "formMessage": "Your message",
+    "formBtn": "Send message",
+    "sending": "Sending…",
+    "sent": "Message ready to send",
+    "sentHint": "Your email client should have opened. If not, write to me directly.",
+    "or": "Or reach me directly"
   },
   "contactPage": {
-    "title": "Let's Work Together",
-    "subtitle": "Got a project, a collaboration idea, or an opportunity? I'm listening.",
+    "title": "Let's work together",
+    "subtitle": "A project, a collaboration idea, an opportunity? I'm listening.",
     "subjectLabel": "Subject",
     "subjectProject": "Project",
     "subjectCollab": "Collaboration",
-    "subjectJob": "Employment",
+    "subjectJob": "Job",
     "subjectOther": "Other",
     "namePlaceholder": "Your Name",
     "emailPlaceholder": "Your Email",
     "messagePlaceholder": "Your Message",
-    "sendBtn": "Send Message",
+    "sendBtn": "Send",
     "sending": "Sending...",
     "sent": "Sent!",
     "contactTitle": "Contact",
@@ -148,6 +120,8 @@
   },
   "footer": {
     "built": "Built with Next.js & Framer Motion",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "navTitle": "Navigate",
+    "elsewhereTitle": "Elsewhere"
   }
 }

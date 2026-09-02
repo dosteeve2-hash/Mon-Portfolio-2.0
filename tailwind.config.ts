@@ -1,5 +1,10 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * Toutes les couleurs pointent vers les tokens CSS de `app/globals.css`.
+ * C'est ce qui rend le bascule sombre/clair réelle : aucun composant ne
+ * référence un hex, seul `:root.light` redéfinit les variables.
+ */
 const config: Config = {
   darkMode: "class",
   content: [
@@ -10,29 +15,33 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        navy: "#0A1628",
+        navy: "var(--c-bg)",
         bg: {
-          DEFAULT: "#0A1628",
-          2: "#0e1f3d",
-          3: "#142b52",
+          DEFAULT: "var(--c-bg)",
+          2: "var(--c-bg-2)",
+          3: "var(--c-bg-3)",
         },
+        surface: "var(--c-surface)",
         "text-primary": {
-          DEFAULT: "#f5f0e8",
-          2: "#9ba8c4",
-          3: "#4e5f82",
+          DEFAULT: "var(--c-text)",
+          2: "var(--c-text-2)",
+          3: "var(--c-text-3)",
         },
         gold: {
-          DEFAULT: "#D4AF37",
-          2: "#F5D67A",
-          3: "#b8962e",
+          DEFAULT: "var(--c-gold)",
+          2: "var(--c-gold-2)",
+          3: "var(--c-gold-3)",
+          ink: "var(--c-gold-ink)",
+          vivid: "var(--c-gold-vivid)",
         },
         accent: {
-          cyan: "#00BCD4",
-          green: "#22d98a",
+          cyan: "var(--c-cyan)",
+          "cyan-vivid": "var(--c-cyan-vivid)",
+          green: "var(--c-green)",
         },
         border: {
-          DEFAULT: "#16233d",
-          2: "#1f3054",
+          DEFAULT: "var(--c-border)",
+          2: "var(--c-border-2)",
         },
       },
       fontFamily: {
@@ -40,10 +49,16 @@ const config: Config = {
         outfit: ["var(--font-outfit)", "system-ui", "sans-serif"],
         mono: ["var(--font-jetbrains)", "Menlo", "monospace"],
       },
+      boxShadow: {
+        card: "var(--shadow-card)",
+        "glow-gold": "0 0 35px var(--glow-gold)",
+        "glow-cyan": "0 0 35px var(--glow-cyan)",
+      },
       animation: {
-        "ticker": "ticker 30s linear infinite",
-        "float": "float 6s ease-in-out infinite",
+        ticker: "ticker 40s linear infinite",
+        float: "float 6s ease-in-out infinite",
         "pulse-gold": "pulse-gold 2s ease-in-out infinite",
+        "caret-blink": "caret-blink 1.1s step-end infinite",
       },
       keyframes: {
         ticker: {
@@ -57,6 +72,10 @@ const config: Config = {
         "pulse-gold": {
           "0%, 100%": { opacity: "0.4", transform: "scale(1)" },
           "50%": { opacity: "1", transform: "scale(1.05)" },
+        },
+        "caret-blink": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
         },
       },
       backdropBlur: {

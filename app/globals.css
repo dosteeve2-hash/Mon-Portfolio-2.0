@@ -1,39 +1,227 @@
 @import "tailwindcss";
 @config "../tailwind.config.ts";
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   DESIGN TOKENS — FORGE Afrika  ·  Navy × Gold × Cyan
+   Chaque couleur est un token sémantique. Le thème clair redéfinit les mêmes
+   variables : aucun composant ne connaît le thème actif.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root,
+:root.dark {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --c-bg: #0a1628;
+  --c-bg-2: #0e1f3d;
+  --c-bg-3: #142b52;
+  --c-surface: #0d1c35;
+
+  /* Texte */
+  --c-text: #f5f0e8;
+  --c-text-2: #9ba8c4;
+  --c-text-3: #7386a8;
+
+  /* Accents */
+  --c-gold: #d4af37;
+  --c-gold-2: #f5d67a;
+  --c-gold-3: #b8962e;
+  --c-gold-ink: #0a1628; /* texte posé SUR du gold */
+  --c-cyan: #00bcd4;
+  --c-green: #22d98a;
+
+  /* Traits */
+  --c-border: #16233d;
+  --c-border-2: #1f3054;
+
+  /* Effets */
+  --glow-gold: rgba(212, 175, 55, 0.45);
+  --glow-cyan: rgba(0, 188, 212, 0.35);
+  --shadow-card: 0 18px 45px -20px rgba(0, 0, 0, 0.75);
+  --grain-opacity: 0.035;
+}
+
+:root.light {
+  color-scheme: light;
+
+  --c-bg: #faf7f1;
+  --c-bg-2: #f1ebe0;
+  --c-bg-3: #ffffff;
+  --c-surface: #ffffff;
+
+  --c-text: #0a1628;
+  --c-text-2: #4b5a78;
+  --c-text-3: #626e88;
+
+  --c-gold: #8a6c0d;
+  --c-gold-2: #b8962e;
+  --c-gold-3: #7a5f08;
+  --c-gold-ink: #fffdf7;
+  --c-cyan: #06768a;
+  --c-green: #0f7a51;
+
+  --c-border: #e6dfd1;
+  --c-border-2: #d6c9b1;
+
+  --glow-gold: rgba(150, 118, 15, 0.28);
+  --glow-cyan: rgba(6, 118, 138, 0.22);
+  --shadow-card: 0 18px 40px -24px rgba(10, 22, 40, 0.35);
+  --grain-opacity: 0.02;
+}
+
+/* Gold « vif » : jamais du texte, uniquement des halos / points / dégradés
+   décoratifs qui doivent rester à l'identité de la marque dans les 2 thèmes. */
+:root {
+  --c-gold-vivid: #d4af37;
+  --c-cyan-vivid: #00bcd4;
+}
+
+/* Chaque projet a sa couleur d'accent dans projects.json. Ces teintes sont
+   calibrées pour le fond navy : posées telles quelles sur l'ivoire du thème
+   clair, elles tombent sous 2:1. On les assombrit donc côté thème, ce qui
+   préserve l'identité de chaque projet sans sacrifier la lisibilité. */
+:root {
+  --project-shade: transparent;
+  --project-shade-amount: 0%;
+}
+:root.light {
+  --project-shade: #050d1a;
+  --project-shade-amount: 45%;
+}
+
+.project-ink {
+  color: color-mix(
+    in oklab,
+    var(--project-color, currentColor),
+    var(--project-shade) var(--project-shade-amount)
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem; /* la navbar fixe ne masque plus les ancres */
 }
 
-/* Custom scrollbar */
+body {
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::selection {
+  background: var(--c-gold);
+  color: var(--c-gold-ink);
+}
+
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 4px;
+  height: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A1628;
+  background: var(--c-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
-  border-radius: 2px;
+  background: var(--c-gold);
+  border-radius: 4px;
 }
 
-/* Hide default cursor on desktop — CustomCursor takes over */
+/* Focus clavier — visible dans les deux thèmes, jamais masqué par le curseur
+   custom (qui, lui, ne s'applique qu'à la souris). */
+:focus-visible {
+  outline: 2px solid var(--c-gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Curseur custom : activé UNIQUEMENT après montage du composant React et
+   seulement sur pointeur fin. Si le JS échoue, le curseur système reste. */
 @media (pointer: fine) {
-  * {
-    cursor: none !important;
+  body[data-custom-cursor="on"],
+  body[data-custom-cursor="on"] a,
+  body[data-custom-cursor="on"] button,
+  body[data-custom-cursor="on"] input,
+  body[data-custom-cursor="on"] textarea,
+  body[data-custom-cursor="on"] select,
+  body[data-custom-cursor="on"] [role="button"] {
+    cursor: none;
   }
 }
 
-/* Selection */
-::selection {
-  background: #D4AF37;
-  color: #0A1628;
+/* ═══════════════════════════════════════════════════════════════════════════
+   UTILITAIRES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.text-gradient-gold {
+  background: linear-gradient(120deg, var(--c-gold-2), var(--c-gold), var(--c-gold-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* Line clamp utility */
+/* Carte de surface standard du design system */
+.surface-card {
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border-2);
+  box-shadow: var(--shadow-card);
+}
+
+/* Halo ambiant réutilisable (hero, sections) */
+.ambient-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+/* Grain léger : casse les aplats de dégradé sur grands écrans */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Grille technique discrète en fond de section */
+.grid-lines {
+  background-image:
+    linear-gradient(to right, var(--c-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--c-border) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 20%, transparent 75%);
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
 .line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACCESSIBILITÉ — mouvement réduit
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }

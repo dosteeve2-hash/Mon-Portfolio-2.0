@@ -1,23 +1,28 @@
-"use client";
-
-const items = [
-  "AI", "MIFA", "Project Africa", "Ollama", "Next.js", "Design",
-  "Burkina Faso", "Innovation", "Claude", "TypeScript", "Supabase",
-  "Web3", "Builder", "Africa Tech", "SDC",
+const ITEMS = [
+  "Next.js", "TypeScript", "Supabase", "Claude", "Ollama", "Tailwind",
+  "Product Design", "Burkina Faso", "Africa Tech", "FORGE Afrika",
+  "Innovation", "Builder",
 ];
 
+/**
+ * Bandeau défilant. Purement décoratif : masqué aux lecteurs d'écran, et le
+ * défilement s'arrête sous `prefers-reduced-motion` (règle globale CSS).
+ */
 export default function Ticker() {
-  const repeated = [...items, ...items];
+  const repeated = [...ITEMS, ...ITEMS];
 
   return (
-    <div className="w-full overflow-hidden bg-gold py-3 border-y border-gold-3 select-none">
+    <div
+      aria-hidden
+      className="w-full select-none overflow-hidden border-y border-gold-3 bg-gold py-3"
+    >
       <div className="flex animate-ticker whitespace-nowrap">
         {repeated.map((item, i) => (
-          <span key={i} className="flex items-center flex-shrink-0">
-            <span className="font-mono text-sm font-bold uppercase tracking-widest text-bg px-6">
+          <span key={`${item}-${i}`} className="flex flex-shrink-0 items-center">
+            <span className="px-6 font-mono text-sm font-bold uppercase tracking-widest text-gold-ink">
               {item}
             </span>
-            <span className="text-bg/40 font-bold">·</span>
+            <span className="font-bold text-gold-ink/40">·</span>
           </span>
         ))}
       </div>

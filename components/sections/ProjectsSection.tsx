@@ -1,183 +1,285 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
+import { ChevronLeft, ChevronRight, ExternalLink, Pause, Play } from "lucide-react";
 import GlowButton from "@/components/GlowButton";
-import ScrollReveal from "@/components/ScrollReveal";
 import ProjectLogo from "@/components/ProjectLogo";
-import projectsData from "@/data/projects.json";
+import Reveal from "@/components/ui/Reveal";
+import { GithubIcon } from "@/components/icons/Social";
+import SectionHeading from "@/components/ui/SectionHeading";
+import { FEATURED_PROJECTS, PROJECTS, describe, type Project } from "@/lib/projects";
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  stack: string[];
-  live?: string;
-  github: string;
-  status: "production" | "dev";
-  featured: boolean;
-  color: string;
-}
+const AUTO_PLAY_MS = 6000;
 
-const AUTO_PLAY_MS = 5000;
+function StatusDot({ status }: { status: Project["status"] }) {
+  const t = useTranslations("projects");
+  const production = status === "production";
+  const color = production ? "var(--c-green)" : "var(--c-gold)";
 
-const projects = (projectsData as Project[]).filter((p) => p.featured);
-
-function StatusDot({ status }: { status: "production" | "dev" }) {
-  const color = status === "production" ? "#22d98a" : "#D4AF37";
-  const label = status === "production" ? "In Production" : "In Development";
   return (
-    <div className="flex items-center gap-1.5">
-      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: color }} />
-      <span className="font-mono text-[10px] uppercase tracking-widest" style={{ color }}>
-        {label}
+    <div className="flex shrink-0 items-center gap-1.5">
+      <span
+        className="h-1.5 w-1.5 shrink-0 animate-pulse rounded-full"
+        style={{ backgroundColor: color }}
+      />
+      <span
+        className="whitespace-nowrap font-mono text-[10px] uppercase tracking-widest"
+        style={{ color }}
+      >
+        {production ? t("statusProduction") : t("statusDev")}
       </span>
     </div>
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function FeaturedCard({ project }: { project: Project }) {
+  const t = useTranslations("projects");
+  const locale = useLocale();
+
   return (
-    <motion.div
-      key={project.id}
-      initial={{ opacity: 0, x: 80 }}
+    <motion.article
+      initial={{ opacity: 0, x: 60 }}
       animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -80 }}
+      exit={{ opacity: 0, x: -60 }}
       transition={{ duration: 0.45, ease: "easeInOut" }}
-      className="grid md:grid-cols-2 gap-10 items-center"
+      className="grid items-center gap-10 md:grid-cols-2"
     >
-      {/* Photo placeholder — colored gradient */}
       <div
-        className="relative rounded-2xl overflow-hidden border border-[#1f3054] aspect-video"
-        style={{ background: `linear-gradient(135deg, ${project.color}15 0%, #0A162890 100%)` }}
+        className="relative aspect-video overflow-hidden rounded-2xl border border-border-2"
+        style={{ background: `linear-gradient(135deg, ${project.color}22 0%, var(--c-bg-2) 100%)` }}
       >
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="font-playfair text-6xl font-bold italic opacity-20 text-[#f5f0e8]">
-            {project.title.slice(0, 2)}
-          </span>
-        </div>
+        <span
+          aria-hidden
+          className="absolute inset-0 flex items-center justify-center font-playfair
+            text-7xl font-bold italic text-text-primary opacity-15"
+        >
+          {project.title.slice(0, 2)}
+        </span>
         <ProjectLogo
           id={project.id}
           color={project.color}
-          className="absolute top-4 left-4 shadow-lg rounded-[10px]"
+          className="absolute left-4 top-4 rounded-[10px] shadow-lg"
         />
-        <div
-          className="absolute bottom-4 left-4 right-4 h-1 rounded-full"
-          style={{ backgroundColor: project.color, opacity: 0.8 }}
+        <span
+          aria-hidden
+          className="absolute inset-x-4 bottom-4 h-1 rounded-full opacity-80"
+          style={{ backgroundColor: project.color }}
         />
       </div>
 
-      {/* Info */}
       <div className="space-y-5">
         <StatusDot status={project.status} />
         <h3
-          className="font-playfair text-3xl md:text-4xl font-bold italic"
-          style={{ color: project.color }}
+          className="project-ink font-playfair text-3xl font-bold italic md:text-4xl"
+          style={{ "--project-color": project.color } as React.CSSProperties}
         >
           {project.title}
         </h3>
-        <p className="font-outfit text-[#9ba8c4] leading-relaxed">{project.description}</p>
-        <div className="flex flex-wrap gap-2">
+        <p className="font-outfit leading-relaxed text-text-primary-2">
+          {describe(project, locale)}
+        </p>
+        <ul className="flex flex-wrap gap-2">
           {project.stack.map((tag) => (
-            <span
+            <li
               key={tag}
-              className="font-mono text-[10px] uppercase tracking-wider px-3 py-1 rounded-full border"
-              style={{ borderColor: `${project.color}40`, color: "#9ba8c4" }}
+              className="rounded-full border px-3 py-1 font-mono text-[10px] uppercase tracking-wider text-text-primary-2"
+              style={{ borderColor: `${project.color}55` }}
             >
               {tag}
-            </span>
+            </li>
           ))}
-        </div>
-        <div className="flex items-center gap-3 pt-2">
+        </ul>
+        <div className="flex flex-wrap items-center gap-3 pt-2">
           {project.live && (
-            <GlowButton href={project.live} variant="gold" target="_blank" rel="noopener noreferrer">
-              <ExternalLink size={14} /> Demo
+            <GlowButton
+              href={project.live}
+              variant="gold"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ExternalLink size={14} /> {t("demo")}
             </GlowButton>
           )}
-          <GlowButton href={project.github} variant="outline" target="_blank" rel="noopener noreferrer">
-            Code
+          <GlowButton
+            href={project.github}
+            variant="outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GithubIcon size={14} /> {t("code")}
           </GlowButton>
         </div>
       </div>
-    </motion.div>
+    </motion.article>
+  );
+}
+
+function ProjectTile({ project, index }: { project: Project; index: number }) {
+  const t = useTranslations("projects");
+  const locale = useLocale();
+
+  return (
+    <Reveal as="li" delay={Math.min(index, 5) * 0.06}>
+      <article className="surface-card group flex h-full flex-col gap-4 rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40">
+        <div className="flex items-start justify-between gap-3">
+          <h4
+            className="project-ink font-playfair text-xl font-bold italic"
+            style={{ "--project-color": project.color } as React.CSSProperties}
+          >
+            {project.title}
+          </h4>
+          <StatusDot status={project.status} />
+        </div>
+
+        <p className="line-clamp-3 flex-1 font-outfit text-sm leading-relaxed text-text-primary-2">
+          {describe(project, locale)}
+        </p>
+
+        <ul className="flex flex-wrap gap-1.5">
+          {project.stack.slice(0, 4).map((tag) => (
+            <li
+              key={tag}
+              className="rounded-full border border-border-2 px-2 py-0.5 font-mono text-[10px] text-text-primary-3"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex items-center gap-3 border-t border-border pt-4">
+          {project.live ? (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-gold transition-colors hover:text-gold-2"
+            >
+              <ExternalLink size={12} /> {t("demo")}
+            </a>
+          ) : (
+            <span className="font-mono text-[11px] uppercase tracking-wider text-text-primary-3">
+              {t("noLive")}
+            </span>
+          )}
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-auto inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-text-primary-2 transition-colors hover:text-gold"
+          >
+            <GithubIcon size={12} /> {t("code")}
+          </a>
+        </div>
+      </article>
+    </Reveal>
   );
 }
 
 export default function ProjectsSection() {
+  const t = useTranslations("projects");
+  const reduced = useReducedMotion();
   const [current, setCurrent] = useState(0);
-  const [paused, setPaused] = useState(false);
+  const [playing, setPlaying] = useState(true);
 
-  const next = useCallback(() => setCurrent((i) => (i + 1) % projects.length), []);
-  const prev = useCallback(() => setCurrent((i) => (i - 1 + projects.length) % projects.length), []);
+  const count = FEATURED_PROJECTS.length;
+  const next = useCallback(() => setCurrent((i) => (i + 1) % count), [count]);
+  const prev = useCallback(() => setCurrent((i) => (i - 1 + count) % count), [count]);
 
   useEffect(() => {
-    if (paused) return;
+    if (!playing || reduced || count < 2) return;
     const id = setInterval(next, AUTO_PLAY_MS);
     return () => clearInterval(id);
-  }, [paused, next]);
+  }, [playing, reduced, next, count]);
+
+  const project = FEATURED_PROJECTS[current];
+  if (!project) return null;
 
   return (
-    <section id="projects" className="py-32 bg-[#0A1628]">
-      <div className="max-w-7xl mx-auto px-6">
-        <ScrollReveal className="mb-16">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#D4AF37] mb-2">04</p>
-          <h2 className="font-playfair text-5xl md:text-6xl font-bold italic text-[#f5f0e8]">
-            Projects
-          </h2>
-          <p className="mt-3 font-playfair text-xl italic text-[#9ba8c4]">
-            Real products. Real impact.
-          </p>
-        </ScrollReveal>
+    <section id="projects" className="relative overflow-hidden bg-bg py-28 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeading
+          num={t("sectionNum")}
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          subtitle={t("subtitle")}
+          className="mb-16"
+        />
 
-        {/* Carousel */}
         <div
           className="relative"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
+          onMouseEnter={() => setPlaying(false)}
+          onMouseLeave={() => setPlaying(true)}
+          onFocusCapture={() => setPlaying(false)}
         >
           <AnimatePresence mode="wait">
-            <ProjectCard key={projects[current].id} project={projects[current]} />
+            <FeaturedCard key={project.id} project={project} />
           </AnimatePresence>
 
-          {/* Controls */}
-          <div className="flex items-center justify-between mt-10">
+          <div className="mt-10 flex items-center justify-between gap-4">
             <div className="flex gap-2">
               <button
                 onClick={prev}
-                className="w-10 h-10 rounded-full border border-[#1f3054] hover:border-[#D4AF37]/60 text-[#9ba8c4] hover:text-[#D4AF37] flex items-center justify-center transition-all duration-200"
-                aria-label="Previous project"
+                aria-label={t("prev")}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border-2 text-text-primary-2 transition-all duration-200 hover:border-gold/60 hover:text-gold"
               >
                 <ChevronLeft size={18} />
               </button>
               <button
                 onClick={next}
-                className="w-10 h-10 rounded-full border border-[#1f3054] hover:border-[#D4AF37]/60 text-[#9ba8c4] hover:text-[#D4AF37] flex items-center justify-center transition-all duration-200"
-                aria-label="Next project"
+                aria-label={t("next")}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border-2 text-text-primary-2 transition-all duration-200 hover:border-gold/60 hover:text-gold"
               >
                 <ChevronRight size={18} />
               </button>
+              <button
+                onClick={() => setPlaying((v) => !v)}
+                aria-label={playing ? t("pause") : t("play")}
+                aria-pressed={!playing}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-border-2 text-text-primary-2 transition-all duration-200 hover:border-gold/60 hover:text-gold"
+              >
+                {playing ? <Pause size={15} /> : <Play size={15} />}
+              </button>
             </div>
-            {/* Dots */}
+
             <div className="flex gap-2">
-              {projects.map((_, i) => (
+              {FEATURED_PROJECTS.map((p, i) => (
                 <button
-                  key={i}
+                  key={p.id}
                   onClick={() => setCurrent(i)}
-                  aria-label={`Go to project ${i + 1}`}
-                  className="transition-all duration-300"
+                  aria-label={t("goTo", { n: i + 1 })}
+                  aria-current={i === current ? "true" : undefined}
+                  className="py-2"
                 >
                   <span
                     className={`block rounded-full transition-all duration-300 ${
                       i === current
-                        ? "w-6 h-2 bg-[#D4AF37]"
-                        : "w-2 h-2 bg-[#1f3054] hover:bg-[#D4AF37]/40"
+                        ? "h-2 w-6 bg-gold"
+                        : "h-2 w-2 bg-border-2 hover:bg-gold/40"
                     }`}
                   />
                 </button>
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Le catalogue complet : les projets non « featured » n'apparaissaient
+            nulle part sur le site alors qu'ils sont dans projects.json. */}
+        <div className="mt-28">
+          <Reveal className="mb-10">
+            <h3 className="font-playfair text-3xl font-bold italic text-text-primary md:text-4xl">
+              {t("allTitle")}
+            </h3>
+            <p className="mt-2 font-outfit text-text-primary-2">{t("allSubtitle")}</p>
+          </Reveal>
+
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {PROJECTS.map((p, i) => (
+              <ProjectTile key={p.id} project={p} index={i} />
+            ))}
+          </ul>
         </div>
       </div>
     </section>

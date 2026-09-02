@@ -1,13 +1,13 @@
-﻿"use client";
+"use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useTranslations, useLocale } from "next-intl";
-import { useRouter, usePathname } from "next/navigation";
-import { Sun, Moon, Menu, X } from "lucide-react";
-import Logo from "./Logo";
-
-const LOCALES = ["EN", "FR", "TR"] as const;
+import { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
+import { usePathname, useRouter } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import Logo from "@/components/Logo";
+import ThemeToggle from "@/components/ThemeToggle";
+import { LOCALES, NAV_SECTIONS, isLocale } from "@/lib/site";
 
 export default function Navbar() {
   const t = useTranslations("nav");
@@ -16,89 +16,127 @@ export default function Navbar() {
   const pathname = usePathname();
 
   const [scrolled, setScrolled] = useState(false);
-  const [dark, setDark] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState<string>("");
 
-  useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    const isDark = saved !== "light";
-    setDark(isDark);
-    document.documentElement.classList.toggle("dark", isDark);
-  }, []);
+  const onHome = pathname === `/${locale}` || pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const toggleTheme = () => {
-    const next = !dark;
-    setDark(next);
-    document.documentElement.classList.toggle("dark", next);
-    localStorage.setItem("theme", next ? "dark" : "light");
-  };
+  /* Surligne le lien de la section visible. Les ancres pointent désormais
+     vers des sections qui existent réellement dans la page. */
+  useEffect(() => {
+    if (!onHome) return;
+    const targets = NAV_SECTIONS
+      .map((s) => document.getElementById(s.id))
+      .filter((el): el is HTMLElement => el !== null);
+    if (targets.length === 0) return;
 
-  const switchLocale = (loc: string) => {
-    const seg = pathname.split("/");
-    seg[1] = loc.toLowerCase();
-    router.push(seg.join("/"));
-  };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive(visible.target.id);
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: [0, 0.25, 0.5, 1] }
+    );
+    targets.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [onHome]);
 
-  const links = [
-    { href: "#about", label: t("about") },
-    { href: "#skills", label: t("skills") },
-    { href: "#projects", label: t("projects") },
-    { href: "#ai", label: t("ai") },
-    { href: `/${locale}/contact`, label: t("contact") },
-  ];
+  // Bloque le scroll de la page quand le tiroir mobile est ouvert.
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
+
+  const switchLocale = useCallback(
+    (next: string) => {
+      const segments = pathname.split("/");
+      if (isLocale(segments[1] ?? "")) segments[1] = next;
+      else segments.splice(1, 0, next);
+      router.push(segments.join("/") || `/${next}`);
+    },
+    [pathname, router]
+  );
+
+  // Hors de la home, les ancres doivent repasser par la page d'accueil.
+  const hrefFor = (id: string) => (onHome ? `#${id}` : `/${locale}#${id}`);
 
   return (
     <>
       <motion.nav
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" as const }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-bg/80 dark:bg-bg/80 backdrop-blur-xl border-b border-border/50"
-            : "bg-transparent"
+            ? "border-b border-border/60 bg-bg/80 backdrop-blur-xl"
+            : "border-b border-transparent bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 md:h-20">
           <a
-            href="#"
-            aria-label="Retour en haut de page"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            href={onHome ? "#top" : `/${locale}`}
+            aria-label={t("home")}
+            className="rounded-md"
           >
             <Logo size="sm" />
           </a>
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-text-primary-2 hover:text-gold transition-colors duration-200 font-outfit text-sm tracking-wide"
-              >
-                {link.label}
-              </a>
-            ))}
+          <div className="hidden items-center gap-8 md:flex">
+            {NAV_SECTIONS.map((section) => {
+              const isActive = onHome && active === section.id;
+              return (
+                <a
+                  key={section.id}
+                  href={hrefFor(section.id)}
+                  aria-current={isActive ? "true" : undefined}
+                  className={`relative font-outfit text-sm tracking-wide transition-colors duration-200 ${
+                    isActive ? "text-gold" : "text-text-primary-2 hover:text-gold"
+                  }`}
+                >
+                  {t(section.key)}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-active"
+                      className="absolute -bottom-1.5 left-0 h-px w-full bg-gold"
+                    />
+                  )}
+                </a>
+              );
+            })}
           </div>
 
-          {/* Controls */}
-          <div className="hidden md:flex items-center gap-3">
-            {/* Locale toggle */}
-            <div className="flex items-center gap-1 bg-bg-2/80 border border-border rounded-full px-1 py-1">
+          <div className="hidden items-center gap-3 md:flex">
+            <div
+              role="group"
+              aria-label={t("language")}
+              className="flex items-center gap-1 rounded-full border border-border bg-bg-2/80 p-1"
+            >
               {LOCALES.map((loc) => (
                 <button
                   key={loc}
                   onClick={() => switchLocale(loc)}
-                  className={`font-mono text-xs px-2.5 py-1 rounded-full transition-all duration-200 ${
-                    locale.toUpperCase() === loc
-                      ? "bg-gold text-bg font-bold"
+                  aria-pressed={locale === loc}
+                  className={`rounded-full px-2.5 py-1 font-mono text-xs uppercase transition-all duration-200 ${
+                    locale === loc
+                      ? "bg-gold font-bold text-gold-ink"
                       : "text-text-primary-2 hover:text-gold"
                   }`}
                 >
@@ -106,74 +144,65 @@ export default function Navbar() {
                 </button>
               ))}
             </div>
-
-            {/* Theme toggle */}
-            <button
-              onClick={toggleTheme}
-              aria-label={dark ? "Passer en mode clair" : "Passer en mode sombre"}
-              className="w-9 h-9 rounded-full border border-border bg-bg-2/80 flex items-center justify-center text-text-primary-2 hover:text-gold hover:border-gold transition-all duration-200"
-            >
-              {dark ? <Sun size={16} /> : <Moon size={16} />}
-            </button>
+            <ThemeToggle className="h-9 w-9" />
           </div>
 
-          {/* Mobile hamburger */}
           <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
             aria-expanded={menuOpen}
-            className="md:hidden w-9 h-9 flex items-center justify-center text-text-primary-2 hover:text-gold transition-colors"
+            aria-controls="mobile-menu"
+            className="flex h-9 w-9 items-center justify-center text-text-primary-2 transition-colors hover:text-gold md:hidden"
           >
             {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </motion.nav>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
+            id="mobile-menu"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-bg/95 backdrop-blur-xl flex flex-col md:hidden"
+            className="fixed inset-0 z-40 flex flex-col bg-bg/95 backdrop-blur-xl md:hidden"
           >
-            <div className="flex flex-col gap-6 p-8 mt-20">
-              {links.map((link, i) => (
+            <div className="mt-20 flex flex-col gap-6 p-8">
+              {NAV_SECTIONS.map((section, i) => (
                 <motion.a
-                  key={link.href}
-                  href={link.href}
+                  key={section.id}
+                  href={hrefFor(section.id)}
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.07 }}
                   onClick={() => setMenuOpen(false)}
-                  className="text-3xl font-playfair font-bold italic text-text-primary hover:text-gold transition-colors"
+                  className="font-playfair text-3xl font-bold italic text-text-primary transition-colors hover:text-gold"
                 >
-                  {link.label}
+                  {t(section.key)}
                 </motion.a>
               ))}
 
-              <div className="flex items-center gap-4 mt-4">
+              <div className="mt-4 flex items-center gap-3">
                 {LOCALES.map((loc) => (
                   <button
                     key={loc}
-                    onClick={() => { switchLocale(loc); setMenuOpen(false); }}
-                    className={`font-mono text-sm px-3 py-1.5 rounded-full border transition-all duration-200 ${
-                      locale.toUpperCase() === loc
-                        ? "bg-gold text-bg border-gold font-bold"
+                    onClick={() => {
+                      switchLocale(loc);
+                      setMenuOpen(false);
+                    }}
+                    aria-pressed={locale === loc}
+                    className={`rounded-full border px-3 py-1.5 font-mono text-sm uppercase transition-all duration-200 ${
+                      locale === loc
+                        ? "border-gold bg-gold font-bold text-gold-ink"
                         : "border-border text-text-primary-2 hover:border-gold hover:text-gold"
                     }`}
                   >
                     {loc}
                   </button>
                 ))}
-                <button
-                  onClick={toggleTheme}
-                  className="ml-auto w-10 h-10 rounded-full border border-border flex items-center justify-center text-text-primary-2 hover:text-gold"
-                >
-                  {dark ? <Sun size={18} /> : <Moon size={18} />}
-                </button>
+                <ThemeToggle className="ml-auto h-10 w-10" size={18} />
               </div>
             </div>
           </motion.div>
