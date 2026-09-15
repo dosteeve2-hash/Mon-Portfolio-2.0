@@ -32,5 +32,13 @@ jobs:
       - name: Vérifier la synchro des locales
         run: npm run check:messages
 
+      # check:links existait dans package.json depuis la PR #9 et n'a jamais tourné
+      # nulle part : un garde-fou qu'on n'exécute pas est un garde-fou qu'on n'a pas.
+      - name: Vérifier les liens des projets
+        run: npm run check:links
+
+      - name: Vérifier le respect du mouvement réduit
+        run: npm run check:motion
+
       - name: Build
         run: npm run build
