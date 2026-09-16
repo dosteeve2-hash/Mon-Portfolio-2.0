@@ -37,6 +37,11 @@ jobs:
       - name: Vérifier les liens des projets
         run: npm run check:links
 
+      # La synchro ne dit rien d'une clé renommée dans les trois locales à la
+      # fois : ce contrôle-ci vérifie que chaque clé appelée par le code existe.
+      - name: Vérifier que les clés appelées existent
+        run: npm run check:i18n-usage
+
       - name: Vérifier le respect du mouvement réduit
         run: npm run check:motion
 

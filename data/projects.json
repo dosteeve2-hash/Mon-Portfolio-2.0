@@ -33,7 +33,7 @@
       "Recharts",
       "Framer Motion"
     ],
-    "live": "https://comptrack.vercel.app",
+    "live": "https://comptrack-chi.vercel.app",
     "github": "https://github.com/dosteeve2-hash/comptrack",
     "sourcePublic": false,
     "status": "production",
