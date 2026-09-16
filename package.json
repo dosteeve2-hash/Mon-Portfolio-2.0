@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "check:messages": "node scripts/check-messages.mjs",
+    "check:i18n-usage": "node scripts/check-i18n-usage.mjs",
     "check:links": "node scripts/check-project-links.mjs"
   },
   "dependencies": {

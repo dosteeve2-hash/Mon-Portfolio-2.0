@@ -32,5 +32,10 @@ jobs:
       - name: Vérifier la synchro des locales
         run: npm run check:messages
 
+      # La synchro ne dit rien d'une clé renommée dans les trois locales à la
+      # fois : ce contrôle-ci vérifie que chaque clé appelée par le code existe.
+      - name: Vérifier que les clés appelées existent
+        run: npm run check:i18n-usage
+
       - name: Build
         run: npm run build
