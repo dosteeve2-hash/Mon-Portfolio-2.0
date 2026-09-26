@@ -9,7 +9,8 @@
     "openMenu": "Ouvrir le menu",
     "closeMenu": "Fermer le menu",
     "home": "Retour en haut",
-    "language": "Langue"
+    "language": "Langue",
+    "certifications": "Certifications"
   },
   "hero": {
     "greeting": "Bonjour, je suis",
@@ -85,8 +86,16 @@
     "levelStrong": "Solide",
     "levelWorking": "Opérationnel"
   },
-  "contact": {
+  "certifications": {
     "sectionNum": "04",
+    "eyebrow": "Certifications",
+    "title": "Ce que j'ai validé",
+    "subtitle": "Chaque titre renvoie à son attestation. Une certification sans lien de vérification n'est qu'une affirmation.",
+    "verify": "Vérifier",
+    "verifiableNote": "{count} sur {total} portent un lien de vérification publique."
+  },
+  "contact": {
+    "sectionNum": "05",
     "eyebrow": "Contact",
     "title": "Construisons",
     "titleAccent": "quelque chose d'extraordinaire.",

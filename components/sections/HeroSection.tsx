@@ -15,14 +15,15 @@ function AvailabilityBadge({ label }: { label: string }) {
     <motion.div
       animate={{ y: [0, -10, 0] }}
       transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute -right-4 bottom-2 flex items-center gap-2.5 rounded-2xl
-        border border-gold/30 bg-surface px-4 py-2.5 shadow-card backdrop-blur-sm sm:-right-6"
+      className="absolute -right-2 bottom-0 flex items-center gap-2 rounded-2xl
+        border border-gold/30 bg-surface px-3 py-2 shadow-card backdrop-blur-sm
+        sm:-right-4 sm:gap-2.5 sm:px-4 sm:py-2.5 md:-right-6"
     >
       <span className="relative flex h-2.5 w-2.5">
         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-green opacity-75" />
         <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent-green" />
       </span>
-      <span className="whitespace-nowrap font-mono text-xs uppercase tracking-widest text-text-primary">
+      <span className="whitespace-nowrap font-mono text-[10px] uppercase tracking-widest text-text-primary sm:text-xs">
         {label}
       </span>
     </motion.div>
@@ -179,9 +180,12 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.4 }}
-          className="hidden items-center justify-center md:flex"
+          /* La photo était `hidden md:flex` : sur un téléphone, le portfolio
+             n'avait pas de visage. Elle passe en tête sur mobile — c'est la
+             première chose qu'on veut montrer — et revient à droite dès `md`. */
+          className="order-first flex items-center justify-center md:order-none"
         >
-          <div className="relative aspect-square w-72 lg:w-80">
+          <div className="relative aspect-square w-44 sm:w-56 md:w-72 lg:w-80">
             <div
               aria-hidden
               className="absolute inset-0 rounded-full bg-gradient-to-br from-gold-vivid/25 to-accent-cyan-vivid/20 blur-2xl"
@@ -191,7 +195,7 @@ export default function HeroSection() {
                 src={SITE.photo}
                 alt={t("photoAlt")}
                 fill
-                sizes="(min-width: 1024px) 320px, 288px"
+                sizes="(min-width: 1024px) 320px, (min-width: 768px) 288px, (min-width: 640px) 224px, 176px"
                 className="object-cover"
                 priority
               />
