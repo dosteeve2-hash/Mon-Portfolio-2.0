@@ -5,6 +5,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import StatsSection from "@/components/sections/StatsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import SkillsSection from "@/components/sections/SkillsSection";
+import CertificationsSection from "@/components/sections/CertificationsSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 export default async function HomePage({
@@ -23,6 +24,7 @@ export default async function HomePage({
       <StatsSection />
       <ProjectsSection />
       <SkillsSection />
+      <CertificationsSection />
       <ContactSection />
     </>
   );

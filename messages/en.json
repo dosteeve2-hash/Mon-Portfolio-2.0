@@ -9,7 +9,8 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "home": "Back to top",
-    "language": "Language"
+    "language": "Language",
+    "certifications": "Certifications"
   },
   "hero": {
     "greeting": "Hello, I'm",
@@ -85,8 +86,16 @@
     "levelStrong": "Strong",
     "levelWorking": "Working"
   },
-  "contact": {
+  "certifications": {
     "sectionNum": "04",
+    "eyebrow": "Certifications",
+    "title": "What I've earned",
+    "subtitle": "Every entry links to its credential. A certification without a verification link is just a claim.",
+    "verify": "Verify",
+    "verifiableNote": "{count} of {total} carry a public verification link."
+  },
+  "contact": {
+    "sectionNum": "05",
     "eyebrow": "Contact",
     "title": "Let's build",
     "titleAccent": "something extraordinary.",

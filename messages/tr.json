@@ -9,7 +9,8 @@
     "openMenu": "Menüyü aç",
     "closeMenu": "Menüyü kapat",
     "home": "Başa dön",
-    "language": "Dil"
+    "language": "Dil",
+    "certifications": "Sertifikalar"
   },
   "hero": {
     "greeting": "Merhaba, ben",
@@ -85,8 +86,16 @@
     "levelStrong": "Güçlü",
     "levelWorking": "Yetkin"
   },
-  "contact": {
+  "certifications": {
     "sectionNum": "04",
+    "eyebrow": "Sertifikalar",
+    "title": "Kazandıklarım",
+    "subtitle": "Her başlık kendi belgesine bağlanır. Doğrulama bağlantısı olmayan bir sertifika yalnızca bir iddiadır.",
+    "verify": "Doğrula",
+    "verifiableNote": "{total} sertifikanın {count} tanesi herkese açık doğrulama bağlantısı taşıyor."
+  },
+  "contact": {
+    "sectionNum": "05",
     "eyebrow": "İletişim",
     "title": "Birlikte",
     "titleAccent": "olağanüstü bir şey inşa edelim.",
