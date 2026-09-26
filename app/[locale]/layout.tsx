@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import { JetBrains_Mono, Outfit, Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CustomCursor from "@/components/CustomCursor";
@@ -12,26 +12,48 @@ import ThemeScript from "@/components/ThemeScript";
 import { LOCALES, SITE } from "@/lib/site";
 import "../globals.css";
 
-const playfair = Playfair_Display({
+/*
+ * Polices auto-hébergées — voir `app/polices/LICENCES.md`.
+ *
+ * `next/font/google` télécharge les fichiers PENDANT le build. Le 26/09/2026,
+ * c'est ce qui a fait échouer le déploiement Vercel de la PR #13 :
+ * `module-not-found` sur `[next]/internal/font/google/jetbrains_mono_*.module.css`.
+ * La CI du dépôt était verte au même instant — un build qui dépend d'un service
+ * tiers réussit ou échoue selon le réseau du jour, pas selon le code.
+ *
+ * Le même défaut avait fait tomber la CI de COMBINE le 23/09. Là-bas, la panne a
+ * été reproduite en coupant `fonts.googleapis.com` : l'ancien code sort en 1, le
+ * nouveau en 0. C'est ce correctif-là qui est porté ici.
+ *
+ * Ce sont des polices VARIABLES : un fichier couvre tout l'axe de graisse, d'où
+ * `weight: "400 900"` plutôt qu'une liste. Quatre fichiers, 139 Ko.
+ */
+const playfair = localFont({
   variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
-  style: ["normal", "italic"],
   display: "swap",
+  src: [
+    { path: "../polices/playfair-display.woff2", weight: "400 900", style: "normal" },
+    { path: "../polices/playfair-display-italic.woff2", weight: "400 900", style: "italic" },
+  ],
+  // Mesuré sur Georgia, la police à empattement la plus répandue : limite le
+  // saut de mise en page pendant le `swap`.
+  fallback: ["Georgia", "Times New Roman", "serif"],
+  adjustFontFallback: "Times New Roman",
 });
 
-const outfit = Outfit({
+const outfit = localFont({
   variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
   display: "swap",
+  src: [{ path: "../polices/outfit.woff2", weight: "100 900", style: "normal" }],
+  fallback: ["system-ui", "Segoe UI", "Helvetica Neue", "Arial", "sans-serif"],
+  adjustFontFallback: "Arial",
 });
 
-const jetbrains = JetBrains_Mono({
+const jetbrains = localFont({
   variable: "--font-jetbrains",
-  subsets: ["latin"],
-  weight: ["400", "500"],
   display: "swap",
+  src: [{ path: "../polices/jetbrains-mono.woff2", weight: "100 800", style: "normal" }],
+  fallback: ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "monospace"],
 });
 
 const DESCRIPTIONS: Record<string, string> = {
