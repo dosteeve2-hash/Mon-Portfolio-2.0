@@ -13,7 +13,7 @@
       "GSAP",
       "Recharts"
     ],
-    "live": "https://taama.vercel.app",
+    "live": "https://taama-mu.vercel.app",
     "github": "https://github.com/dosteeve2-hash/taama",
     "sourcePublic": false,
     "status": "production",
@@ -205,7 +205,7 @@
       "Tailwind v4",
       "GSAP"
     ],
-    "live": "https://forja.vercel.app",
+    "live": "https://forja-pied.vercel.app",
     "github": "https://github.com/dosteeve2-hash/forja",
     "sourcePublic": false,
     "status": "production",
@@ -225,7 +225,7 @@
       "Recharts",
       "shadcn/ui"
     ],
-    "live": "https://milltrack.vercel.app",
+    "live": "https://milltrack-two.vercel.app",
     "github": "https://github.com/dosteeve2-hash/milltrack",
     "sourcePublic": false,
     "status": "dev",
